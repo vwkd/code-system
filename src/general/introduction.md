@@ -2,6 +2,8 @@
 
 <!-- ToDo: finish -->
 
+<!-- todo: explain segfault, race conditions -->
+<!-- todo: explain runtime, garbage collection -->
 
 
 ## Terminology
@@ -42,3 +44,15 @@ Stack is LIFO queue, holds variables etc., pushes on stack when in scope and pop
 simple type: value stored on stack, immutable, fixed size
 complex type: value stored on heap, mutable, growable size
 beware: can have same kind of values in both types, e.g. strings in Rust can be simple or complex
+
+allocate memory -> use memory -> release memory
+memory a leak, when release does not happen
+
+IN JS
+forgotten global variables, forgotten timers, forgottenx references to deleted DOM nodes
+
+
+
+## Resources
+
+- [Steve Klabnik, Carol Nichols - The Rust Programming Language](https://doc.rust-lang.org/book/)
