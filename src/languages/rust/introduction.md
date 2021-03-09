@@ -50,3 +50,13 @@ reference is pointer to variable on stack, allows to use value without taking ow
     can have mutiple non-mutable references to a value per scope or a single mutable reference, prevents data races
     scope of a reference starts with definition and ends with last use, smaller or equal than variable scope !!! i.e. can't have dangling pointers since reference is always out of scope before variable and therefore memory is freed
     was introduced for easier manipulation of a variable, to not have to transfer ownership into a function and return it again
+
+
+
+## Resources
+
+- [Steve Klabnik, Carol Nichols - The Rust Programming Language](https://doc.rust-lang.org/book/)
+
+<!-- todo: watch -->
+- [Alex Crichton - Rust](https://youtube.com/watch?v=agzf6ftEsLU)
+- [Aaron Turon - The Rust Programming Language](https://youtube.com/watch?v=O5vzLKg7y-k)
