@@ -24,17 +24,18 @@ index: 2
 
 ## Reference
 
-- pointer to existing variable, safe pointer to data in memory owned by someone else, "borrow"
+- safe pointer to data in memory owned by existing variable, "borrow"
 - beware: data can be on stack or heap, e.g. array, struct, the existing variable is always on heap
-- must go out of scope before or at same time as owner variable, i.e. dangling pointer
+- tied to existing variable, must go out of scope before or at same time as existing variable, i.e. dangling pointer
 - when it goes out of scope nothing happens
-- can have either multiple immutable references or single mutable reference, e.g. prevents data races
-- can't use existing variable in meantime
+- scope is between declaration and last use, smaller than usual
+- can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
+- can't use existing variable in meantime??
 
 ## Slice
 
-- view into part of a data
-- reference??
+- reference to part of a collection, e.g. array, vec, etc.
+- can think of as view or window into data
 
 ## Resources
 
