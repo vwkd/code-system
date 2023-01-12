@@ -11,7 +11,8 @@ index: 2
 
 ## Variable
 
-- container of data, on stack or on heap, "pointer" to data on heap
+- container of data, points to area in memory, on stack or on heap
+- called "pointer" if data is on heap??
 - stored itself on stack
 - all data in memory is owned by single variable, not multiple
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
@@ -25,10 +26,11 @@ index: 2
 ## Reference
 
 - safe pointer to data in memory owned by existing variable, "borrow"
+- points to variable (on stack), follows that variable to get to data
 - beware: data can be on stack or heap, e.g. array, struct, the existing variable is always on heap
 - tied to existing variable, must go out of scope before or at same time as existing variable, i.e. dangling pointer
-- when it goes out of scope nothing happens
-- scope is between declaration and last use, smaller than usual
+- when it goes out of scope nothing happens, data is not dropped
+- scope is between declaration and last use, smaller than variable scope
 - can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
 - can't use existing variable in meantime??
 
