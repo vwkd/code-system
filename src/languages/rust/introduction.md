@@ -9,7 +9,7 @@
 <!-- ?? -->
 
 - expression based language: `if`, loops, blocks are expressions
-
+- comparisons are deeply, e.g. strings, arrays
 
 ## Variables
 
