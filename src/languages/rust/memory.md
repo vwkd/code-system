@@ -18,7 +18,7 @@ index: 3
 - stored itself on stack
 - all data in memory is owned by single variable, not multiple
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
-- scope is also called "lifetime"??
+- lifetime is its scope, region of code where it's valid
 - on assignment or function call copies variable
   - for primitive value (type that implement `Copy` trait) copies value, like pass by value
   - for heap-allocated value copies pointer, transfers ownership to new variable, old variable is invalidated, "moved", like pass by reference
