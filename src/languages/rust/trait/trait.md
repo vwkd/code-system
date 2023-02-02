@@ -21,6 +21,8 @@ index: 11
 - alternatively using `where` clause after return type to make function signature more readable
 - syntax sugar using `impl` directly, but can't specify same type for multiple arguments or return type, for return type can't return different types conditionally from function body
 
+
+
 ## Blanket Imlementations
 
 - can implement trait for a generic type that satisfies a trait bound

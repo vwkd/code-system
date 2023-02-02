@@ -8,6 +8,8 @@ index: 6
 - reusable part of code
 - takes input and gives output
 
+
+
 ## Function
 
 - no variable number of arguments, no rest parameters, no default values
@@ -15,6 +17,8 @@ index: 6
 - can't close over outer-scope variables
 - obligatory type annotations for arguments and return type since can't infert
 ?? parameters are just variables that get assigned the arguments
+
+
 
 ## Closure
 

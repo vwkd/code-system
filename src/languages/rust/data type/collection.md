@@ -8,6 +8,8 @@ index: 10
 - multiple values
 - deeply mutable only if variable is mutable
 
+
+
 ## Tuple
 
 - list of values
@@ -15,6 +17,8 @@ index: 10
 - different types
 - not iterable
 - index must be static
+
+
 
 ## Array
 
@@ -27,6 +31,8 @@ index: 10
 - beware: direct index copies element, must use reference for heap-allocated data type since move is not possible ❗️
 - beware: can't access elements and also mutate collection, would be two borrows where at least one is mutable, e.g. `v[0]; v.push(1);` ❗️
 
+
+
 ## Vector
 
 - list of values
@@ -37,6 +43,8 @@ index: 10
 - index can be dynamic
 - beware: direct index copies element, must use reference for heap-allocated data type since move is not possible ❗️
 - beware: can't access elements and also mutate collection, would be two borrows where at least one is mutable ❗️
+
+
 
 ## HashMap
 

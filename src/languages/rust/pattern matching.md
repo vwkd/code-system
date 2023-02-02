@@ -10,6 +10,8 @@ index: 8
 - can use `..` to ignore multiple values, e.g. in complex type
 - beware: can only have single `..` to make it unambiguous!
 
+
+
 ## `match`
 
 - branch on all values
@@ -23,11 +25,15 @@ index: 8
 
 - additional condition in addition to˝ pattern
 
+
+
 ## `if let`
 
 - branch only on one value
 - multiple with `else if let`
 - beware: not exhaustive!
+
+
 
 ## `while let`
 

@@ -9,6 +9,8 @@ index: 3
 - no manual memory management, no garbage collection
 - more constrained, but can use `unsafe` to manage manually
 
+
+
 ## Variable
 
 - container of data, points to area in memory, on stack or on heap
@@ -25,6 +27,8 @@ index: 3
 - can clone data instead using `.clone()` method
 - return value of function moves ownership to callsite
 
+
+
 ## Reference
 
 - safe pointer to data in memory owned by existing variable, "borrow"
@@ -35,6 +39,8 @@ index: 3
 - scope is between declaration and last use, smaller than variable scope
 - can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
 - can't use existing variable in meantime??
+
+
 
 ### Lifetime annotation
 
@@ -47,11 +53,15 @@ index: 3
 - type of generic
 - static lifetime is duration of whole program
 
+
+
 ## Slice
 
 - reference to part of a collection, e.g. array, vec, etc.
 - can think of as view or window into data
 - points to data directly, but still tied to existing variable?!?
+
+
 
 ## Resources
 
