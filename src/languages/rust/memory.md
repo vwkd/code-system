@@ -57,7 +57,7 @@ index: 3
 
 ## Slice
 
-- reference to part of a collection, e.g. array, vec, etc.
+- reference to fixed-size part of a collection, e.g. array, vec, etc.
 - can think of as view or window into data
 - points to data directly, but still tied to existing variable?!?
 
