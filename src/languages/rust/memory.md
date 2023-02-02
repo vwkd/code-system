@@ -36,13 +36,13 @@ index: 2
 - can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
 - can't use existing variable in meantime??
 
-### Lifetime annotations
+### Lifetime annotation
 
-- specify relationship between lifetimes of references when can't infer ("elide")
+- specifies relationship between lifetimes of references when can't infer ("elide")
 - needed for references in function return type with multiple references in function arguments
 - needed for references in struct field and any implementations
-- specify minimum lifetime, not exact same lifetime
-- beware: don't change lifetime, just clarify relationships!
+- specifies minimum lifetime, not exact same lifetime
+- beware: doesn't change lifetime, just clarifies relationships!
 - beware: only ever used on references!
 - type of generic
 - static lifetime is duration of whole program
