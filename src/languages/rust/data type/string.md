@@ -10,11 +10,15 @@ index: 4
 - can not be indexed, because one byte could be part of a multi-byte character
 - beware: `.chars()` gets scalar values, not grapheme clusters, one grapheme cluster might have multiple scalar values, can use external `unicode-segmentation` crate
 
+
+
 ## `String`
 
 - heap-allocated growable owned
 - UTF-8 encoding
 - like `Vec<u8>` but always valid UTF-8
+
+
 
 ## `&str`
 
@@ -23,6 +27,8 @@ index: 4
 - can only use reference directly since size is not known at compile-time for stack
 - `&String` gets automatically coerced to `&str`
 - have static lifetime
+
+
 
 ## String literal
 
