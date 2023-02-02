@@ -5,13 +5,14 @@ index: 1
 
 ## Introduction
 
+- fast and correct systems language
+- no manual memory management, no garbage collection, no runtime
+- memory safe by default, e.g. no null pointers, no dangling pointers, no segfaults, etc.
+- no data races
+- strong type system
 - expression based language: `if`, loops, blocks are expressions
 - comparisons are deeply, e.g. strings, arrays
-...
-
-fast, efficient
-correct, memory safe 
-no exceptions, instead enums
+- no exceptions, instead can use enums
 
 
 
