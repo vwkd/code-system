@@ -1,6 +1,6 @@
 ---
 title: Trait
-index: 7
+index: 11
 ---
 
 ## Introduction

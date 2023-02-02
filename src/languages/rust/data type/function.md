@@ -1,6 +1,6 @@
 ---
 title: Function
-index: 5
+index: 6
 ---
 
 ## Introduction
@@ -14,6 +14,7 @@ index: 5
 - can pass as value, e.g. assign to variable, return from function
 - can't close over outer-scope variables
 - obligatory type annotations for arguments and return type since can't infert
+?? parameters are just variables that get assigned the arguments
 
 ## Closure
 

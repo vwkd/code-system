@@ -1,6 +1,6 @@
 ---
 title: Pattern Matching
-index: 6
+index: 8
 ---
 
 ## Introduction
