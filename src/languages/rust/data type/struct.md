@@ -1,6 +1,6 @@
 ---
 title: Struct
-index: 4
+index: 5
 ---
 
 ## Introduction

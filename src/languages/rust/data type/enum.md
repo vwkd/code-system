@@ -1,6 +1,6 @@
 ---
 title: Enum
-index: 5
+index: 7
 ---
 
 ## Introduction

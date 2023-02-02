@@ -1,6 +1,6 @@
 ---
 title: Collection
-index: 6
+index: 10
 ---
 
 ## Introduction
