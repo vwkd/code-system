@@ -31,3 +31,11 @@ index: 5
 
 - without named fields
 - use as a named tuple, can distinguish from other (named) tuples
+- is also constructor function for itself, e.g. `Foo` is like closure `|v| Foo(v)`
+
+```rs
+struct Foo(u8);
+
+let v = [1, 2, 3];
+let w = v.map(Foo);
+```
