@@ -20,8 +20,8 @@ index: 3
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
 - lifetime is its scope, region of code where it's valid
 - on assignment or function call copies variable
-  - for primitive value (type that implement `Copy` trait) copies value, like pass by value
-  - for heap-allocated value copies pointer, transfers ownership to new variable, old variable is invalidated, "moved", like pass by reference
+  - for primitive value (type that implement `Copy` trait) copies value, "pass by value"
+  - for heap-allocated value copies pointer, transfers ownership to new variable, old variable is invalidated, "moved", "pass by reference"
   ?? also moves structs even though on stack??
 - beware: variable is always copied, but underlying data only if not on heap!
 - can clone data instead using `.clone()` method
