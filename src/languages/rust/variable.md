@@ -10,10 +10,8 @@ index: 2
 
 - can be shadowed
 - value can be computed expression
-?? needs type then ??
 - type is inferred where possible
-- can not be declared in any scope
-??, e.g. global scope ??
+- can not be declared in global scope
 - identifier uses snake case by convention
 
 
