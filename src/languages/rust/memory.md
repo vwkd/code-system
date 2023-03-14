@@ -40,15 +40,19 @@ index: 3
 - can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
 - can't use existing variable in meantime??
 
-
-
 ### Lifetime annotation
 
-- specifies relationship between lifetimes of references when can't infer ("elide")
-- needed for references in function return type with multiple references in function arguments
-- needed for references in struct field and any implementations
-- specifies minimum lifetime, not exact same lifetime
+???
+minimum lifetime
+can assign any same type with longer lifetime
+- minimum lifetime of input reference, maximum lifetime of output reference
+- specified as another reference lifetime
+- ??usually output reference lifetime 
+- specifies minimum lifetime of output reference is at least lifetime of input reference, not exact same lifetime
 - beware: doesn't change lifetime, just clarifies relationships!
+- necessary when can't infer ("elide")
+  - references in function return type with multiple references in function arguments
+  - references in struct field and any implementations
 - beware: only ever used on references!
 - type of generic
 - static lifetime is duration of whole program
@@ -60,6 +64,13 @@ index: 3
 - reference to fixed-size part of a collection, e.g. array, vec, etc.
 - can think of as view or window into data
 - points to data directly, but still tied to existing variable?!?
+
+- dynamically sized, because size unknown at compile time
+
+- reference to slice is fat pointer, contains address and size
+- ??? beware: often uses reference of slice since to get statically sized!
+
+- beware: often uses "slice" as synonym for "reference to slice"!
 
 
 
