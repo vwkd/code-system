@@ -5,6 +5,9 @@
 <!-- todo: explain segfault, race conditions -->
 <!-- todo: explain runtime, garbage collection -->
 
+- computer provides two resources: computation and memory
+
+
 
 ## Terminology
 
