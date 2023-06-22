@@ -64,14 +64,38 @@
   - large values that could exceed stack size
   - values with unknown size at compile time
 - dynamic size, can grow, upper limit is memory size
+- all threads share same heap
 - values lifetime not predefined, determined by programmer, "de/allocation"
 - cleanup is manual, by programmer
-- all threads share same heap
+- memory management strategies automatic or manual
 - beware: "memory management" usually refers to management of heap!
-- beware: mismanagement is large source of memory bugs!
+- beware: mismanagement is large source of memory bugs and security vulnerabilities!
+
+#### Manual
+
+- by programmer
+- full control, efficient
+- tedious, error prone, unsafe
+- e.g. C
+
+#### Semi
+
+- efficient
+- semi-tedious, safe
+- resource acquisition is initialization (RAII)
+- ownership based resource management (OBMM)
+- e.g. C++ (RAII), Rust (OBMM)
+
+#### Automatic
+
+- by runtime, garbage collector, pauses program every time to do cleanup
+- no control, inefficient
+- easy, error free, safe
+- e.g. JavaScript
 
 
 
 ## Resources
 
 - [Let's Get Rusty - Stack, Heap, and Static Memory](https://youtube.com/watch?v=NnLdGKoz1ls)
+- [Let's Get Rusty - Memory Management Strategies](https://m.youtube.com/watch?v=GUZ_2gGWuPo)
