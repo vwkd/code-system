@@ -12,6 +12,7 @@
 - multiple implementations are created, one for each concrete type
 - static or dynamic is time when implementation is selected for type
 - beware: probably more general, here restricts to functions ❗️
+- also called generic function
 
 
 
@@ -36,6 +37,17 @@
 ## Dispatch
 
 - process of selecting implementation for type
+
+
+
+## Monomorphism
+
+- opposite of polymorphism
+- also called specialized function
+
+### Monomorphization
+
+- generation of monomorphic functions from polymorphic function
 
 
 
