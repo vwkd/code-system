@@ -17,6 +17,8 @@ index: 12
 - iterator is lazy, computes next value only when calls `next()`
 - iterator variable needs to be mutable because `next()` changes internal state of iteration
 
+zero cost abstraction, no runtime overhead
+
 
 
 ## Usage

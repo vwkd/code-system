@@ -18,6 +18,13 @@ index: 6
 - obligatory type annotations for arguments and return type since can't infert
 ?? parameters are just variables that get assigned the arguments
 
+parameter takes irrefutable pattern
+
+generic implicitly has Sized trait bound
+generic by default only for statically sized types
+can relax by prefixing with question mark ?Sized
+parameter then needs to be some sort of pointer
+
 
 
 ## Closure
@@ -38,3 +45,19 @@ index: 6
 - beware: can run only once if takes ownership of outer variables, since variables are owned and therefore dropped after first call!
 - beware: all captured variables have same ownership, e.g. can't borrow one immutably but other mutably, etc.!
 - more overhead than function because of closure
+
+
+
+## Function Pointer
+
+??
+
+can pass functions as values
+e.g. in `map` method
+
+beware: lowercase
+implements all three closure traits
+
+? instead of using closure as trait bound
+
+best practice to accept closure in argument, can pass function pointer or closure
