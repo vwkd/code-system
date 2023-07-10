@@ -18,6 +18,14 @@ index: 4
 - UTF-8 encoding
 - like `Vec<u8>` but always valid UTF-8
 
+?? is already a pointer to data on the heap
+?? every heap-allocated data type is a pointer to a value on the heap
+reference is a pointer to a pointer
+avoid extra layers of indirection, e.g. pointer to pointer to pointer...
+function argument type should be coercion target, e.g. `&str` instead of `&String`, slice instead of array or vector
+
+implements deref trait to str
+
 
 
 ## `&str`
@@ -26,7 +34,10 @@ index: 4
 - string not necessarily heap, can be in binary as well
 - can only use reference directly since size is not known at compile-time for stack
 - `&String` gets automatically coerced to `&str`
+reference to string can get coerced to string slice
 - have static lifetime
+
+dynamically sized type
 
 
 
