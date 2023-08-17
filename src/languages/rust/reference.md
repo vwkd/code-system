@@ -25,6 +25,9 @@ can maybe replace one Rc with Weak
 weak pointer: doesn't own value
 strong pointer??: owns value
 
+?? fat pointer, pointer to start and length ?? Or only for slice
+
+
 
 ## Lifetime annotation
 
@@ -43,7 +46,13 @@ can assign any same type with longer lifetime
 - type of generic
 - static lifetime is duration of whole program
 
+can use underscore to infer single lifetime since uniquely determined, "anonymous lifetime" ?? STILL NECESSARY WITH NEW COMPILER
+underscore also used to ignore lifetime in argument ?? very confusing if used in return type to, since same symbol but not same lifetime
+e.g. `fn foo(x: &str, y: &'_ str) -> &'_ str { x }`
 
+can specify that one lifetime lives at least as long as other, like trait bound ??? `<'newLifetime: 'existingLifetime>`
+
+?? like subtypes
 
 
 

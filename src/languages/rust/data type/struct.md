@@ -16,6 +16,10 @@ Product type, bundles multiple types together
 also called a "type", even though there can be other types like enums
 likely because it's the only type that can customize ??
 
+??? like enum all fields must be statically sized
+generic type implicitly has Sized trait bound
+can relax with ?Sized, needs to put behind pointer then
+
 
 
 ## Ownership

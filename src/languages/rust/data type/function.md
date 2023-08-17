@@ -25,7 +25,7 @@ generic by default only for statically sized types
 can relax by prefixing with question mark ?Sized
 parameter then needs to be some sort of pointer
 
-- if doesn't return other data type then implicitly returns unit
+- returns unit by default implicitly if doesn't return anything else
 
 
 

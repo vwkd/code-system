@@ -6,6 +6,7 @@ index: ???
 ## Introduction
 
 ???
+? data structure
 
 Algebraic data types
 
