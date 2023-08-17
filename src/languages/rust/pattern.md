@@ -45,6 +45,11 @@ can only have single to make it unambiguous
 
 at operator if wants to rename restructured variable and specify value as pattern, since both syntaxes collide
 
+`ref` keyword to get reference ?? DIFFERENT IN NEWER COMPILER ? INFERRED IMPLICITLY ?
+? alternatively use methods `as_ref()`, `as_mut()`, ??as_ref_mut
+??? mutably borrows if expression itself is mutable borrow
+
+
 
 ## Irrefutable
 

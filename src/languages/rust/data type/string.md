@@ -12,7 +12,11 @@ index: 4
 
 
 
-## `String`
+## Owned string
+
+? similar to `Vec<char>`
+
+`String`
 
 - heap-allocated growable owned
 - UTF-8 encoding
@@ -28,14 +32,21 @@ implements deref trait to str
 
 
 
-## `&str`
+## String slice
+
+? sequence of characters
+? similar to `[char]`
+? doesn't have size
+
+must put behind some sort of pointer, usually behind reference
+
+`&str`
 
 - string slice for some string in memory
 - string not necessarily heap, can be in binary as well
 - can only use reference directly since size is not known at compile-time for stack
 - `&String` gets automatically coerced to `&str`
 reference to string can get coerced to string slice
-- have static lifetime
 
 dynamically sized type
 
@@ -43,5 +54,6 @@ dynamically sized type
 
 ## String literal
 
-- stored in binary directly
-- string slice pointing to address in binary
+string slice
+has static lifetime
+stored of binary, loaded in memory of binary

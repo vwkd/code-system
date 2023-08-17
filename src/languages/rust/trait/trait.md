@@ -186,6 +186,8 @@ included in prelude, automatically in scope
 
 ## Trait Bound
 
+// todo: move to function?
+
 - generic function parameter or return type which implements a trait, "bounded"
 - can use multiple
 - after generic type after colon, separated by plus
@@ -208,6 +210,8 @@ all methods on trait have no generic parameters and don't return self
 If it acts as an output, it should be an associated type
 
 generics allow multiple implementations, associated types are specific
+when wants only one implementation for any given type
+? also don't need to specify generic when use concrete type
 
 type placeholder of trait
 can use in signatures of method definitions
@@ -284,3 +288,17 @@ struct that implement trait must also implement supertrait
 ?? can define it similar to trait bound after name
 `trait MyTrait: SuperTrait { ... }`
 
+
+
+## Extension trait
+
+idiomatic way to extend foreign trait
+
+trait with bound ??
+blanket implementation for all types
+
+```rs
+pub trait IteratorExt: Iterator { .. }
+
+impl<T: Iterator> IteratorExt for T { .. }
+```

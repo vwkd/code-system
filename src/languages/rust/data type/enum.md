@@ -46,6 +46,10 @@ unwrap method to panic at runtime, can use during development or when case never
 
 ? included in prelude
 
+? question mark operator also works, extracts Some or returns None
+
+? has map method that maps some of some otherwise just back to none
+
 
 
 ### Result
@@ -57,3 +61,5 @@ forces error handling
 unwrap method to panic at runtime, can use during development or when case never happens
 
 ? included in prelude
+
+question mark operator, extracts result or returns Err ??
