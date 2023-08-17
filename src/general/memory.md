@@ -6,6 +6,7 @@
 
 - ability to store data
 - volatile or persistent
+- note: value calls specific data, data calls unspecific values ❗️
 
 
 

@@ -8,20 +8,25 @@ index: 3
 - uses ownership based resource management
 - no manual memory management, no garbage collection
 - more constrained, but can use `unsafe` to manage manually
+- beware: here values are on heap, since memory management refers only to managing heap ❗️
 
 
 
 ## Ownership
 
+- memory management strategy
 - each value has a variable that's its owner
 - there can only be one owner at a time
 - if the owner goes out of scope, the value is dropped
 - checked at compile time
 
+- all data in memory is owned by single variable, not multiple
+- memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
+- cleans up resources automatically
+- prevents resource leaks, use after free, double free
+
 who is responsible for clean up
 can use shared pointer for shared ownership???
-
-move semantics by default, implicit, by assigning ??
 
 
 
@@ -51,20 +56,15 @@ not statically at compile time
 
 ## Variable
 
-- container of data, points to area in memory, on stack or on heap
-- called "pointer" if data is on heap??
-- stored itself on stack
-- all data in memory is owned by single variable, not multiple
-- memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
-
 - lifetime is its scope, region of code where it's valid
 - on assignment or function call copies variable
-  - for primitive value (type that implement `Copy` trait) copies value, "pass by value"
+move semantics by default, implicit, by assigning ??
+  - for primitive value (type that implement `Copy` trait) copies value, "pass by value", clones by default
   - beware: also in smart pointer initialization function, e.g. `Box::new(42)`
   - for heap-allocated value copies pointer, transfers ownership to new variable, old variable is invalidated, "moved", "pass by reference"
   ?? also moves structs even though on stack??
-- beware: variable is always copied, but underlying data only if not on heap!
-- can clone data instead using `.clone()` method
+- beware: variable is always copied, but underlying value only if not on heap!
+- can clone value instead using `.clone()` method
 ?? to copy instead of move
 - return value of function moves ownership to callsite
 
@@ -72,10 +72,10 @@ not statically at compile time
 
 ## move
 
-copy of data from one binding to another
+copy of value from one binding to another
 invalidates the previous owner
 
-guaranteed to be bitwise copy of the data contained in the type, equivalent to a memcpy of the appropriate size
+guaranteed to be bitwise copy of the value contained in the type, equivalent to a memcpy of the appropriate size
 
 implicit during binding
 
