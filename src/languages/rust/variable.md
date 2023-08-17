@@ -40,14 +40,13 @@ if let Some(_y) = x {}
 
 ### Constant
 
-- can't be shadowed
-- value can only be constant expression, not computed, i.e. also not mutable
+- value must be constant expression, computable at compile time
+- beware: value can't be computed, e.g. mutable ❗️
 - type needs to be specified
-- can be declared in any scope, including global scope
+- can't be shadowed
 - identifier uses upper case by convention
-
-?? variable memory address, might change
-? can duplicate its data whenever used
+- can be declared in any scope, including global scope
+- creates new instance of value every time is used, different memory address, think of value being inlined
 
 
 
@@ -55,12 +54,9 @@ if let Some(_y) = x {}
 
 global variables
 
-like constant
-must annotate type
-identifier uses upper case by convention
+- like constant, but
+- can be mutable, but accessing and mutating only in unsafe block
+- uses same instance every time is used, same memory address, single value
+- can use for large amounts of data, needs single fixed memory address, or when needs interior mutability
 
 must have static lifetime
-
-but
-fixed memory address, always same
-can be mutable, but accessing and mutating only in unsafe block
