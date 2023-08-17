@@ -5,9 +5,6 @@ index: 6
 
 ## Introduction
 
-- reusable part of code
-- takes input and gives output
-
 
 
 ## Function
@@ -16,7 +13,6 @@ index: 6
 - is expression, can pass as value, e.g. assign to variable, return from function
 - can't close over outer-scope variables
 - obligatory type annotations for arguments and return type since can't infer
-?? parameters are just variables that get assigned the arguments
 
 parameter takes irrefutable pattern
 
