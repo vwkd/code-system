@@ -9,11 +9,18 @@ index: 1
 - no manual memory management, no garbage collection, no runtime
 - memory safe by default, e.g. no null pointers, no dangling pointers, no segfaults, iterator invalidation, no data races, etc.
 - strong type system
-- expression based language: `if`, loops, blocks are expressions
+- expression based language, almost everything is expression, e.g. if, loop, block, function, etc.
 - comparisons are deeply, e.g. strings, arrays
 - no exceptions, instead can use enums
 - zero-cost abstractions for high-level language features, e.g. iterators
 - union of actor and functional language, allow aliasing or mutation but not both
+
+
+
+## Syntax
+
+- most statements end in semicolon, but not all, e.g. function definition
+- statement returns unit
 
 
 

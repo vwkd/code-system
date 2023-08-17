@@ -11,8 +11,16 @@
 
 ## Terminology
 
-- statement: unit of code that performs some action, doesn't return a value (returns empty value), e.g. variable definition, function definition, etc.
-- expression: unit of code that evaluates to a value, e.g. `1 + 2`, function call, etc.
+### Statement
+
+- unit of code that performs some action
+- doesn't return a value
+- e.g. variable definition, function definition, etc.
+
+### Expression
+
+- unit of code that evaluates to a value
+- e.g. `1 + 2`, function call, etc.
 
 
 

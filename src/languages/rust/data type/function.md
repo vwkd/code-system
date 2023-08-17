@@ -13,9 +13,9 @@ index: 6
 ## Function
 
 - no variable number of arguments, no rest parameters, no default values
-- can pass as value, e.g. assign to variable, return from function
+- is expression, can pass as value, e.g. assign to variable, return from function
 - can't close over outer-scope variables
-- obligatory type annotations for arguments and return type since can't infert
+- obligatory type annotations for arguments and return type since can't infer
 ?? parameters are just variables that get assigned the arguments
 
 parameter takes irrefutable pattern
@@ -25,7 +25,9 @@ generic by default only for statically sized types
 can relax by prefixing with question mark ?Sized
 parameter then needs to be some sort of pointer
 
-- returns unit by default implicitly if doesn't return anything else
+- returns unit by default implicitly if doesn't return a value
+- returns implicitly last expression if any
+- can return early with `return` statement
 
 
 
