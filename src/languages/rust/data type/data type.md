@@ -10,20 +10,6 @@ index: ???
 
 Algebraic data types
 
-can be statically or dynamically sized
-
-
-
-## ? statically sized
-
-size known at compile time
-
-## ? dynamically sized
-
-size only known at runtime
-?? has extra bit of metadata that stores size of data
-must put behind some sort of pointer
-
 
 
 ## Scalar

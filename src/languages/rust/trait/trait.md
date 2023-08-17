@@ -101,10 +101,17 @@ allows debug formatting
 useful in print
 can derive
 
+### Copy
+
+- ability to copy value implicitly
+- all primitive types implement it
+- can think of implicit `clone()`
+
 ### Clone
 
-allows to copy type, with `clone()` method
-can derive
+- ability to copy value explicitly using `clone()`
+- can derive
+- "deep copy"
 
 ### Default
 
