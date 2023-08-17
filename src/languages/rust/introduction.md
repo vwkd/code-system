@@ -21,6 +21,7 @@ index: 1
 
 - most statements end in semicolon, but not all, e.g. function definition
 - statement returns unit
+- line comments with `//`, block comments with `/*` and `*/`
 
 
 

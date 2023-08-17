@@ -46,3 +46,9 @@ but warning if irrefutable since wouldn't need it
 - branch only on one value
 - multiple with `else if let`
 - beware: not exhaustive!
+
+
+
+## `if`
+
+- condition must be boolean
