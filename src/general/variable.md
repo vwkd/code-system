@@ -12,4 +12,20 @@
 
 
 
+## Derivation
+
+- creation of new variable based on existing variable
+- e.g. assignment, function call, function return, etc.
+- either copies or reuses underlying value
+- beware: own term, not sure if there's an official term ❗️
+
+
+
+## Scope
+
+- region of code where is valid
+- lifetime
+
+
+
 ## Resources

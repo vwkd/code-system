@@ -15,27 +15,32 @@ index: 3
 ## Ownership
 
 - memory management strategy
+- cleans up resources automatically
+- prevents resource leaks, use after free, double free
+
+### Ownership rules
+
 - each value has a variable that's its owner
 - there can only be one owner at a time
 - if the owner goes out of scope, the value is dropped
 - checked at compile time
-
 - all data in memory is owned by single variable, not multiple
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
-- cleans up resources automatically
-- prevents resource leaks, use after free, double free
 
 who is responsible for clean up
 can use shared pointer for shared ownership???
 
 
 
-## Borrowing rules
+## Borrowing
+
+- prevents data races
+- prevents null pointers
+
+### Borrowing rules
 
 - can either have one mutable reference or any number of immutable references
--> prevents data races
 - references must always be valid
--> prevents null pointers
 
 
 
@@ -54,19 +59,26 @@ not statically at compile time
 
 
 
-## Variable
+## Derivation
 
-- lifetime is its scope, region of code where it's valid
-- on assignment or function call copies variable
-move semantics by default, implicit, by assigning ??
-  - for primitive value (type that implement `Copy` trait) copies value, "pass by value", clones by default
-  - beware: also in smart pointer initialization function, e.g. `Box::new(42)`
-  - for heap-allocated value copies pointer, transfers ownership to new variable, old variable is invalidated, "moved", "pass by reference"
-  ?? also moves structs even though on stack??
-- beware: variable is always copied, but underlying value only if not on heap!
-- can clone value instead using `.clone()` method
-?? to copy instead of move
-- return value of function moves ownership to callsite
+### Type with `Copy` trait
+
+- e.g. primitive value
+- copies value
+- think of implicit clone by default
+- "pass by value"
+- beware: also in smart pointer initialization function, e.g. `Box::new(42)`
+
+### Type without `Copy` trait
+
+- e.g. heap-allocated value
+- copies only memory address
+- think of move by default
+- invalidates old variable, ownerships was transferred to new variable, value "moved"
+- "pass by reference", "shallow copy"
+?? also moves structs even though on stack??
+- if implements `Clone` can use `.clone()` method to copy value instead of moving
+- note: return value of function moves ownership to callsite
 
 
 
