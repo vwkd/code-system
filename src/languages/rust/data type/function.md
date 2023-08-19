@@ -21,6 +21,7 @@ generic by default only for statically sized types
 can relax by prefixing with question mark ?Sized
 parameter then needs to be some sort of pointer
 
+- immutable parameters by default, can declare mutable
 - returns unit by default implicitly if doesn't return a value
 - returns implicitly last expression if any
 - can return early with `return` statement
