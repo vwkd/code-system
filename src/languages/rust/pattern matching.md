@@ -9,43 +9,40 @@ index: ??
 
 ## Introduction
 
-- block executed depending on value of type
-- uses pattern matching
+- conditionally executed block
+- uses pattern
+- expression, can return value
 
 matching and binding against the structure of a type
 
 
-### Match Guard
-
-- additional condition in addition to pattern
-?? only in `match`
-applies to each pattern of multiple
-
 
 ## `match`
 
-?? refutable pattern
-
 - branch on all values
-- beware: exhaustive!
-- can use underscore as catch all
-- takes first matching, no fall-through
-- can use or operator
-- can use range operator  for numeric values and characters
+- beware: exhaustive, every value must be matched ❗️
+- ?? takes refutable pattern
+- takes first matching branch, no fall-through
+- can think of definitely branch
 
-maps pattern to expression
-exhaustive, every value must be matched
+### Match Guard
+
+- additional boolean condition
+- syntax trailing `if`
+- applies to each pattern if multiple
+- short-circuited, only evaluated if pattern matches
+- beware: evaluated multiple times if multiple patterns match but condition is `false` ❗️
 
 
 
 ## `if let`
 
-ir/refutable pattern
-but warning if irrefutable since wouldn't need it
-
-- branch only on one value
-- multiple with `else if let`
-- beware: not exhaustive!
+- branch only on some values
+- beware: not exhaustive ❗️
+- takes refutable pattern
+- beware: also takes irrefutable pattern, but warning since doesn't need it, since always matches ❗️
+- can add more branches with `else if let`
+- can think of maybe branch
 
 
 
