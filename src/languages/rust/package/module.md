@@ -12,3 +12,9 @@ index: 9
 - can use by specifying relative or absolute path of module tree, double colons for separation
 - can bring path into scope using `use` keyword, can also rename, reexport, group multiple nested, or any using glob
 - files also create modules, module name is filename without `.rs` extension, tree is nested folders, can bring into scope using `mod` keyword, still needs to use `use` keyword if wants shorter path
+
+use to organize, control scope, control privacy
+
+
+
+## Resources
