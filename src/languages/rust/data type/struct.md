@@ -6,37 +6,37 @@ index: 5
 ## Introduction
 
 - product type
+- members can be fields and methods
+- no inheritance
+- replaces objects, classes in other languages
 
 ??? like enum all fields must be statically sized
 generic type implicitly has Sized trait bound
 can relax with ?Sized, needs to put behind pointer then
 
 
-- stores variables (fields) and functions (methods)
-- no inheritance
 
+## Declaration
 
-
-
-- separate `impl` block for methods, multiple
-- `self` as first argument for instance method, otherwise associated function of struct type itself
-- uses single dot to access struct members, uses double colon to access associated functions
-
-
-
-
-
-## Ownership
-
-- assigning of non-primitive struct property moves it
+- can have methods in separate `impl` block
+- can have multiple `impl` blocks
+- by default is associated function on struct type
+- if first argument is `self` is instance method
+- `self` can be owned, immutable reference or mutable reference
+- beware: methods can always mutate fields, independent if struct variable is mutable ❗️
+- can use owned to return new type, and prevent old to be used afterwards
+- can use associate function for custom constructor, by convention called `new`, can e.g. set default values, do calculations, etc.
 
 
 
 ## Instantiation
 
-- define fields in any order
-- single name shorthand for fields of same name as variable, adapted from JavaScript
-- spread syntax shorthand for reusing remaining fields from existing struct, adapted from JavaScript
+- syntax is struct type followed by block with fields
+- can define fields in any order
+- single name shorthand for fields of same name as variable, like in JavaScript
+- spread syntax shorthand for reusing remaining fields from existing struct, like in JavaScript
+- can declare mutable, then can mutate all fields
+- beware: can't control which fields are mutable, instead use setter methods ❗️
 
 must define all fields
 if has private fields and imports strict in other module, can't instantiate it
@@ -45,19 +45,32 @@ implement associated function `new` that creates new instance, can initializes p
 
 
 
+## Access
+
+- single dot on instance accesses members
+- double colon on struct type accesses associated functions
+- derivation of field like for variable, see Memory#Derivation
+- beware: assigning of field that's not `Copy` moves it ❗️
+
+
 
 ## Tuple Structs
 
-- without named fields
+- like struct, but fields like tuple members without names
 - use as a named tuple, can distinguish from other (named) tuples
-- is also constructor function for itself, e.g. `Foo` is like closure `|v| Foo(v)`
+- is also constructor function for itself, e.g. `Age` is like closure `|age| Age(age)`
 
 ```rs
-struct Foo(u8);
+struct Age(u8);
 
-let v = [1, 2, 3];
-let w = v.map(Foo);
+let ages = [21, 42, 84].map(Age);
 ```
+
+
+## Unit struct
+
+- empty struct
+?? can use to implement trait on something without storing data inside it
 
 
 

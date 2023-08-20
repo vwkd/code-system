@@ -28,7 +28,7 @@ if let Some(_y) = x {}
 ## Mutability
 
 - immutable by default, opt-in to mutability, not other way around
-- propagates deeply into type
+- propagates deeply into composite type
 - beware: can't control granularly, only all or nothing, e.g. one field of struct
 - can use `_` to ignore assignment, doesn't move value, e.g. in destructuring
 - can move mutable variable into immutable variable to freeze it again
