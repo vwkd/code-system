@@ -161,7 +161,7 @@ shouldn't implement by default, instead gate behind feature flag, can opt into d
 ### Deref & DerefMut
 
 ?? coerce to reference
-allows to trat type the same as reference, use in same places, e.g. with dereference operator
+allows to treat type the same as reference, use in same places, e.g. with dereference operator
 
 opt in to coercion
 
