@@ -5,20 +5,24 @@ index: 5
 
 ## Introduction
 
-- grouping of related variables (fields) and functions (methods)
-- no inheritance
-- separate `impl` block for methods, multiple
-- `self` as first argument for instance method, otherwise associated function of struct type itself
-- uses single dot to access struct members, uses double colon to access associated functions
-
-Product type, bundles multiple types together
-
-also called a "type", even though there can be other types like enums
-likely because it's the only type that can customize ??
+- product type
 
 ??? like enum all fields must be statically sized
 generic type implicitly has Sized trait bound
 can relax with ?Sized, needs to put behind pointer then
+
+
+- stores variables (fields) and functions (methods)
+- no inheritance
+
+
+
+
+- separate `impl` block for methods, multiple
+- `self` as first argument for instance method, otherwise associated function of struct type itself
+- uses single dot to access struct members, uses double colon to access associated functions
+
+
 
 
 
