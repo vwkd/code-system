@@ -29,6 +29,9 @@ function argument type should be coercion target, e.g. `&str` instead of `&Strin
 
 implements deref trait to str
 
+- in standard library
+- automatically imported because included in prelude
+
 
 
 ## String slice

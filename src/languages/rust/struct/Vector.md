@@ -15,6 +15,9 @@
 
 reference to vector of Type can be coerced to reference to slice of Type ??? Or only of trait objects
 
+- in standard library
+- automatically imported because included in prelude
+
 
 
 ## Resources
