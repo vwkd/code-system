@@ -14,8 +14,6 @@ index: ???
 
 ## Scalar
 
-- stores single value
-
 ### Boolean
 
 - true or false
@@ -60,9 +58,7 @@ index: ???
 
 
 
-## Compound
-
-- stores multiple values
+## Collection
 
 ### Array
 
