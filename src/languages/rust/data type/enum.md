@@ -52,15 +52,14 @@ let age_limits = [21, 42, 84].map(Category::Age);
 
 ### Option
 
-value or null
-replaces returning null
-forces null handling
+- represents value or not
+- replaces null in other languages
+- forces null handling
+- automatically imported because included in prelude
 
 implements `IntoIterator`, can be iterated over, has either 0 or 1 elements
 
 unwrap method to panic at runtime, can use during development or when case never happens
-
-? included in prelude
 
 ? question mark operator also works, extracts Some or returns None
 
@@ -68,13 +67,12 @@ unwrap method to panic at runtime, can use during development or when case never
 
 ### Result
 
-value or error
-replaces throwing exception
-forces error handling
+- represents value or error
+- replaces throwing exception in other languages
+- forces error handling
+- automatically imported because included in prelude
 
 unwrap method to panic at runtime, can use during development or when case never happens
-
-? included in prelude
 
 question mark operator, extracts result or returns Err ??
 
