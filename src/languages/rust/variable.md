@@ -5,9 +5,6 @@ index: 2
 
 ## Introduction
 
-- points to area in memory
-?? if writes to variable, changes variable to point to new address in memory or overwrites data at address in memory
-
 - can be shadowed
 - value can be computed expression
 - type is inferred where possible

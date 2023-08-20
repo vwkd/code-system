@@ -4,11 +4,12 @@
 
 ## Introduction
 
-- container for a value
-- identifier for memory address of a value
+- name of a value
+- value can be on stack or on heap
 - stored itself on stack
-- points to area in memory, on stack or on heap
-- ??called "pointer" if value is on heap
+- identifier is bound to memory address of value
+- allows to read and write value
+?? if writes to variable, changes variable to point to new address in memory or overwrites value at address in memory
 
 
 
