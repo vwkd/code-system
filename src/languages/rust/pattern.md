@@ -49,6 +49,20 @@ at operator if wants to rename restructured variable and specify value as patter
 ? alternatively use methods `as_ref()`, `as_mut()`, ??as_ref_mut
 ??? mutably borrows if expression itself is mutable borrow
 
+- can use underscore as catch all
+- can use or operator
+- can use range operator for numeric values and characters
+
+maps pattern to expression
+
+can use multiple with `|`
+
+match values against structures and to, optionally, bind variables to values inside these structures
+
+Variables can be bound within the pattern
+The binding mode (move, copy, or reference) depends on the pattern
+?? Every binding in each | separated pattern must appear in all of the patterns in the arm. Every binding of the same name must have the same type, and have the same binding mode.
+
 
 
 ## Irrefutable
