@@ -7,19 +7,39 @@
 - set of values
 - can be primitive or composite
 - can be statically or dynamically sized
+- can be scalar or composite
+- can be non-collection or collection
+- can be algebraic
 
 
 
 ## Primitive
 
-- fundamental
-- not composite
+- atomic, not composite
+- stores single value
+- also called scalar
 
 
 
 ## Composite
 
-- made up of other types
+- made up of multiple other types
+- also called compound
+
+
+
+## Non-collection
+
+- stores single value
+- usually primitive
+?? no proper term
+
+
+
+## Collection
+
+- stores multiple values
+- usually composite
 
 
 
