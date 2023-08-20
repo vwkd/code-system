@@ -4,15 +4,26 @@
 
 ## Introduction
 
-- safe pointer
-- doesn't own value, is owned by other variable
-- also called "borrow"
-- beware: data can be on stack or heap, e.g. integer, array, struct
-- points to variable (on stack), follows that variable to get to data
-- lifetime must be smaller than variable it references, prevents dangling pointer
-- when it goes out of scope nothing happens, data is not dropped
-- scope is between declaration and last use, smaller than variable scope
-- can have either multiple immutable references or single mutable reference in a scope, e.g. prevents data races
+- safe, has rules and restrictions
+- doesn't take ownership of value, doesn't own value, remains owned by other variable
+- also called "borrow", creation of reference "borrowing"
+- syntax is leading ampersand before variable or type
+- immutable by default
+- can declare mutable only if variable is also mutable
+
+
+
+## Rules
+
+- can either have one mutable reference or any number of immutable references
+- prevents data races
+- references must always be valid
+- lifetime must be smaller than variable it references
+- prevents dangling pointer
+- prevents null pointers
+- when it goes out of scope nothing happens, value is not dropped
+- scope is between declaration and last use, smaller than variable scope, "non-lexical lifetime"
+
 - can't use existing variable in meantime??
 
 mutable reference coerces to immutable reference
@@ -58,7 +69,7 @@ can specify that one lifetime lives at least as long as other, like trait bound 
 
 ## Smart Pointer
 
-?? stores data on the heap
+?? stores value on the heap
 - manages memory for you
 
 pointer to a type

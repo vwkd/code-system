@@ -16,31 +16,19 @@ index: 3
 
 - memory management strategy
 - cleans up resources automatically
-- prevents resource leaks, use after free, double free
-
-### Ownership rules
-
 - each value has a variable that's its owner
 - there can only be one owner at a time
 - if the owner goes out of scope, the value is dropped
-- checked at compile time
 - all data in memory is owned by single variable, not multiple
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
+- prevents resource leaks
+- prevents use after free
+- prevents double free
+- rules checked at compile time
 
 who is responsible for clean up
 can use shared pointer for shared ownership???
 
-
-
-## Borrowing
-
-- prevents data races
-- prevents null pointers
-
-### Borrowing rules
-
-- can either have one mutable reference or any number of immutable references
-- references must always be valid
 
 
 
