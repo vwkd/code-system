@@ -4,6 +4,7 @@
 
 ## Introduction
 
+- collection type
 - list of values
 - fixed length
 - different types
