@@ -4,6 +4,7 @@
 
 ## Introduction
 
+- collection type
 - key-value pairs
 - dynamic length
 - different types, both key and values can be any type
