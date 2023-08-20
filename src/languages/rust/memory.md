@@ -91,7 +91,7 @@ in reverse order of creation, i.e. LIFO
 calls `drop` method from Drop trait
 disallows call manually, automatic call would potentially double free
 
-Can instead call `drop` function from std
+Can instead call `drop` function from std library
 included in prelude, no need to bring it into scope
 is empty function that simply takes ownership such that drops at end
 
