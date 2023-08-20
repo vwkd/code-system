@@ -6,28 +6,46 @@ index: 7
 ## Introduction
 
 - sum type
-
-replaces unions in other type systems
-
-variant can be unit (no value), struct, tuple
-
-- can add primitive type, tuple, or struct
-- use double colon to select variant
-- can implement methods and associated functions, like structs
-
-- variant is also constructor function for itself, e.g. `Foo::Bar` is like closure `|v| Foo::Bar(v)`
-
-```rs
-enum Foo {
-  Bar(u8)
-}
-
-let v = [1, 2, 3];
-let w = v.map(Foo::Bar);
-```
+- can have members
+- members can be associate values and methods
+- replaces unions in other languages
 
 ?? stored on stack, all variants must be sized ??
 ?? size is equal to size of largest variant
+
+
+
+## Declaration
+
+- associated value can be unit, tuple or struct
+- can implement methods and associated functions, like for structs
+
+
+
+## Instantiation
+
+- syntax is enum type followed by double colon and associated value (if any)
+- variant is also constructor function for itself, e.g. `Category::Age` is like closure `|age| Category::Age(age)`
+
+```rs
+enum Category {
+  Age(u8)
+}
+
+let age_limits = [21, 42, 84].map(Category::Age);
+```
+
+?? are associated values deeply mutable like for struct
+
+
+
+## Access
+
+- single dot on instance accesses members
+- double colon on enum type accesses associated functions
+- derivation of associated value like for variable, see Memory#Derivation
+- beware: assigning of associated value that's not `Copy` moves it ❗️
+
 
 
 ## Common enums
@@ -48,8 +66,6 @@ unwrap method to panic at runtime, can use during development or when case never
 
 ? has map method that maps some of some otherwise just back to none
 
-
-
 ### Result
 
 value or error
@@ -61,3 +77,7 @@ unwrap method to panic at runtime, can use during development or when case never
 ? included in prelude
 
 question mark operator, extracts result or returns Err ??
+
+
+
+## Resources
