@@ -24,17 +24,17 @@
 
 ## Statically sized (SST)
 
-- size is fixed
 - size known at compile time
+- size is fixed
 
 
 
 ## Dynamically sized (DST)
 
-- size can grow and shrink
 - size only known at runtime
+- size can grow and shrink
 ?? has extra bit of metadata that stores size of data
-- must use behind some sort of pointer
+- must use behind some sort of reference
 
 
 

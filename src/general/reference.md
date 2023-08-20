@@ -10,6 +10,7 @@
 - can think of a pointing finger, a physical address, a page number in a book, a hypherlink, etc.
 - can think of value of another value
 - other value can be anything, can be on stack or heap
+- itself stored on stack
 - can dereference
 - allows more performance, doesn't copy memory
 - can have pointers to pointers

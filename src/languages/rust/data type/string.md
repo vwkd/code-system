@@ -40,8 +40,8 @@ implements deref trait to str
 must put behind some sort of pointer, usually behind reference
 
 - `&str`
-- string slice for some string in memory
-- string not necessarily heap, can be in binary as well
+- slice of string
+- string not necessarily on heap, can be in binary as well
 - can only use reference directly since size is not known at compile-time for stack
 - `&String` gets automatically coerced to `&str`
 reference to string can get coerced to string slice
@@ -52,6 +52,6 @@ dynamically sized type
 
 ## String literal
 
-string slice
-has static lifetime
-stored of binary, loaded in memory of binary
+- is string slice
+- has static lifetime
+- string stored in binary, loaded in memory of binary
