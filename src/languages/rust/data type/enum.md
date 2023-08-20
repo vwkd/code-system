@@ -5,9 +5,7 @@ index: 7
 
 ## Introduction
 
-- grouping of variants
-
-Sum Type / Variant Type, type is any one of its variants
+- sum type
 
 replaces unions in other type systems
 

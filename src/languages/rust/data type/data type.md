@@ -8,7 +8,7 @@ index: ???
 ???
 ? data structure
 
-Algebraic data types
+- has algebraic data types
 
 
 
