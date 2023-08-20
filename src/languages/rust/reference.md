@@ -10,6 +10,7 @@
 - syntax is leading ampersand before variable or type
 - immutable by default
 - can declare mutable only if variable is also mutable
+- to use owned value in outer scope needs to return it, can't return reference since would be dangling pointer
 
 
 
@@ -37,6 +38,13 @@ weak pointer: doesn't own value
 strong pointer??: owns value
 
 ?? fat pointer, pointer to start and length ?? Or only for slice
+
+
+
+## Dereference
+
+- syntax of operator is leading star
+- automatic dereferencing
 
 
 
