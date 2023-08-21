@@ -30,4 +30,13 @@
 
 
 
+## `Cargo.lock`
+
+- lockfile
+- pins exact dependency versions
+- automatically generated, don't edit manually
+- commit, except if library crate
+
+
+
 ## Resources
