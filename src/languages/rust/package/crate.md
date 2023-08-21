@@ -30,6 +30,7 @@ crate root of additional binary crates is `src/bin/<crate name>.rs`
 
 - root module of crate
 - needs `main` function if binary
+- beware: in code called "crate", very confusing ❗️
 
 
 
