@@ -5,27 +5,13 @@ index: 11
 
 ## Introduction
 
-- shared method signatures and optionally default implementations for type
 - set of functionality
-- like interfaces
-- beware: not for field!
-- beware: method with default implementation can call method without, needs to implement that one then!
-- beware: duck typing, can have more traits, can't specify only this but not other traits!??
-- type can implement multiple traits, can overlap, e.g. one generic implementation, one for some trait bound, etc.
-
-enables polymorphism
-set of functions and methods that types can implement
-Similar to interfaces in other languages
-
-types can implement multiple traits
-traits can have default implementations
--> more flexible code design, no hierarchies, composition
-
-Extensions
-trait can extend type outside of crate where was defined
--> extendable types
-e.g. types in the standard library
-but can't implement foreign trait on foreign type, would need to create own annoying wrapper type that implements foreign trait
+- can implement for algebraic data type
+- can have methods, associated functions, associated types, associated constants
+- beware: no struct fields ❗️
+- allows shared behavior
+- enables polymorphism
+- replaces interfaces and inheritance in other languages
 
 ?? generics also enable polymorphism, reuse code for multiple types, abstracted over types
 
@@ -33,9 +19,6 @@ generics can be bound by traits, allows any type that implements trait
 
 traits use static dispatch by default
 -> efficient code generation
-???? What is static Dispatch
-
-replace inheritance in other languages
 
 Static polymorphism using
 generics and usually trait bounds
@@ -43,31 +26,43 @@ generics and usually trait bounds
 Dynamic polymorphism using
 trait objects
 
-Self is concrete type that implements the trait
-
-Can implement trait with methods that has same name as own method
-To call method of trait needs to use explicit syntax `Trait::method(struct, ..)`
-
-can implement two traits with same method name
-?? which method is called by default ?? latest defined ??
-
-can implement trait with same associated function as own
-calls own by default
-can call associated function of trait using extended syntax `<struct as Trait>::function(..)`
-
-orphan rule
-?? can only implement trait for type if trait or type is defined in own module, not if both are defined outside of module
-e.g. can't implement trait from standard library for type from standard library, because both are defined outside module
-can get around limitation by creating wrapping struct
-To access methods from original type can either implement desired ones manually on wrapping struct or implement deref trait on wrapping struct to access all
 
 dynamically sized type
 ? that's why trait object need to be behind pointer
 
 
 
-## Trait Object
+## Declaration
 
+- defines signatures
+- can use `Self` as alias for concrete type that implements trait
+- optionally can provide default implementation
+- beware: implementation can always overwrite default implementation ❗️
+- beware: method with default implementation can call method without, needs to implement that one then ❗️
+
+
+
+## Implementation
+
+- type can implement multiple traits
+- allows flexible composition, no hierarchies
+- traits can overlap, e.g. one generic implementation, one for some trait bound, etc.
+- ?? beware: duck typing, can implement more traits, can't prevent only some but not others ❗️
+
+- if trait has method or associated function with same name as own, calls own by default
+- to call method of trait can use explicit syntax `MyTrait::my_method(MyStruct, ...)`
+- to call associated function of trait can use explicit syntax `<MyStruct as MyTrait>::my_function(...)`
+- ?? if two traits have method or associated function with same name doesn't call any one by default, needs to use explicit syntax
+
+- can implement trait on type, except if both trait and type are foreign
+- enables extendable types
+- e.g. from standard library
+- to implement foreign trait on foreign type can create own wrapper type that implements foreign trait
+- to access methods from original type can either implement desired methods manually on wrapper type or implement deref trait on wrapper type to access all
+
+
+
+## Trait Object
 
 ??? allows to treat different types that implement same trait as interchangeable
 
@@ -89,105 +84,6 @@ e.g. `Vec<Box<dyn Animal>>`
 
 a pointer + dyn keyword + trait
 pointer can be ??reference, Box
-
-
-## Common traits
-
-should implement on public types
-
-### Debug
-
-allows debug formatting
-useful in print
-can derive
-
-### Copy
-
-- ability to copy value implicitly
-- all primitive types implement it
-- can think of implicit `clone()`
-
-### Clone
-
-- ability to copy value explicitly using `clone()`
-- can derive
-- "deep copy"
-
-### Default
-
-allows to create instances with default values, with `default()` associated function
-primitive types have default values, e.g. number is zero, string is empty
-for enum needs to specify default variant with `#[default]`
-can derive if all fields implement it too
-custom implementation if wants to custom default values
-
-### PartialEq
-
-allows to compare instances of type, e.g. in `assert_eq!`
-?? Only equality
-can derive
-
-### Send
-
-type is safe to send between threads
-automatically implemented, unless contains type that is not safe to send
-e.g. if contains `Rc<..>`, could use `Arc<..>` instead
-
-### Sync
-
-type is safe to be shared between threads via references
-automatically implemented, unless contains type that is not safe to sync
-
-### PartialOrd
-
-### Hash
-
-### Eq
-
-### Ord
-
-### Serialize
-
-allows to serialize in common formats
-from serde crate
-shouldn't implement by default, instead gate behind feature flag, can opt into dependency on serde
-
-### Deserialize
-
-allows to deserialize from common formats
-from serde crate
-shouldn't implement by default, instead gate behind feature flag, can opt into dependency on serde
-
-### Deref & DerefMut
-
-?? coerce to reference
-allows to treat type the same as reference, use in same places, e.g. with dereference operator
-
-opt in to coercion
-
-associated type `target`
-not a type parameter since each “smart pointer” should only ever be dereferenceable to a single other type
-
-?? also customizes behavior of deference operator
-allows to be used with dereference operator
-because will coerce to reference which knows how to dereference
-
-implicit deref coercion automagically
-?? on function call
-cascades until last, e.g. &Box<String> -> &String -> &str
-for im/mutable reference of one type to immutable reference of other type, and for mutable to mutable
-
-note: `.deref()` bad method name, because only converts to reference, the actual dereferencing is done in the deref coercion (regardless of Deref)
-
-### Drop
-
-?? specify what happens when owning variable goes out of scope
-
-included in prelude, automatically in scope
-
-### Sized
-
-? implemented for statically sized types
 
 
 
@@ -257,12 +153,9 @@ Often, this occurs when the associated type wants to include data borrowed from 
 
 
 
-
-
 ## Blanket Imlementations
 
 - can implement trait for a generic type that satisfies a trait bound
-
 
 
 
