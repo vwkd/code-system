@@ -9,9 +9,12 @@ index: 11
 - can implement for algebraic data type
 - can have methods, associated functions, associated types, associated constants
 - beware: no struct fields ❗️
+- can instead move shared fields out into shared struct and use that in single field
 - allows shared behavior
 - enables polymorphism
 - replaces interfaces and inheritance in other languages
+- convention is to name after capitalized verb, e.g. `Clone`, `Copy`
+- can think of as adjective, e.g. copyable, clonable, etc.
 
 ?? generics also enable polymorphism, reuse code for multiple types, abstracted over types
 
@@ -89,21 +92,17 @@ pointer can be ??reference, Box
 
 ## Trait Bound
 
-// todo: move to function?
-
-- generic function parameter or return type which implements a trait, "bounded"
-- can use multiple
-- after generic type after colon, separated by plus
-- alternatively using `where` clause after return type to make function signature more readable
-can specify same generic multiple times ?!?
-- syntax sugar using `impl` directly, but can't specify same type for multiple arguments or return type, for return type can't return different types conditionally from function body
-
-is limited to single type, can't mix multiple types that implement trait
-use trait object instead to mix multiple types
+- trait that generic type must implement
+- restricts what generic type can be
+- can specify multiple
+- syntax is following generic name and colon, multiple separated by plus
+- shorthand without naming generic directly with `impl MyTrait`, but can't reuse generic at multiple places
 
 can only do for object-safe traits
 all methods on trait have no generic parameters and don't return self
 ? otherwise compile can't figure out concrete type
+
+- beware: for return type of function can't conditionally return different concrete types, instead use trait object ❗️
 
 
 
