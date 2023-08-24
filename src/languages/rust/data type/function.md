@@ -7,6 +7,8 @@ index: 6
 
 - is expression, can pass as value, e.g. assign to variable, return from function
 - can't close over outer-scope variables
+- can be concrete or generic
+- uses static polymorphism
 
 generic implicitly has Sized trait bound
 generic by default only for statically sized types
