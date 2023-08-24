@@ -5,22 +5,21 @@ index: 6
 
 ## Introduction
 
-
-
-## Function
-
-- no variable number of arguments, no rest parameters, no default values
 - is expression, can pass as value, e.g. assign to variable, return from function
 - can't close over outer-scope variables
-- obligatory type annotations for arguments and return type since can't infer
-
-parameter takes irrefutable pattern
 
 generic implicitly has Sized trait bound
 generic by default only for statically sized types
 can relax by prefixing with question mark ?Sized
 parameter then needs to be some sort of pointer
 
+
+
+## Declaration
+
+- no variable number of arguments, no rest parameters, no default values
+- parameter takes irrefutable pattern
+- obligatory type annotations for arguments and return type since can't infer
 - immutable parameters by default, can declare mutable
 - returns unit by default implicitly if doesn't return a value
 - returns implicitly last expression if any
