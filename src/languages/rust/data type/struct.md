@@ -9,6 +9,8 @@ index: 5
 - members can be fields and methods
 - no inheritance
 - replaces objects, classes in other languages
+- can be concrete or generic
+- uses static polymorphism
 
 ??? like enum all fields must be statically sized
 generic type implicitly has Sized trait bound
@@ -26,6 +28,7 @@ can relax with ?Sized, needs to put behind pointer then
 - beware: methods can always mutate fields, independent if struct variable is mutable ❗️
 - can use owned to return new type, and prevent old to be used afterwards
 - can use associate function for custom constructor, by convention called `new`, can e.g. set default values, do calculations, etc.
+- can use `Self` as alias for type, doesn't need to rename when renamed type
 
 
 

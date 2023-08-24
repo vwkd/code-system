@@ -9,6 +9,8 @@ index: 7
 - can have members
 - members can be associate values and methods
 - replaces unions in other languages
+- can be concrete or generic
+- uses static polymorphism
 
 ?? stored on stack, all variants must be sized ??
 ?? size is equal to size of largest variant
