@@ -4,12 +4,11 @@
 
 ## Introduction
 
-- ability of function to accept multiple different types in argument
+- ability of composite data type to be used with multiple different types
 - specifies base type, can use common functionality of base type, abstracts over concrete types
 - generates multiple implementations, one for each concrete type ("monomorphization")
 - static or dynamic is time when implementation is selected for type
-- function is called generic function
-- beware: probably more general, here restricts to functions ❗️
+- is called generic
 - allows extendable types
 - allows single implementation
 

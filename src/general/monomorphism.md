@@ -4,7 +4,6 @@
 
 ## Introduction
 
-- ability of function to accept only same one type in argument
-- function is called specialized function
-- beware: probably more general, here restricts to functions ❗️
+- ability of composite data type to be used with only one specific type
+- is called specialized
 - opposite of polymorphism
