@@ -23,7 +23,21 @@
 - prevents dangling pointer
 - prevents null pointers
 - when it goes out of scope nothing happens, value is not dropped
-- scope is between declaration and last use, smaller than variable scope, "non-lexical lifetime"
+- scope is between declaration and last use, "non-lexical lifetime"
+- beware: scope is smaller than variable scope ❗️
+
+```rs
+// `s1` scope start
+let mut s1 = String:from("LGR");
+// `r1` scope start
+let r1 = &s1;
+// `r1` scope end
+// `r2` scope start
+let r2 = &mut s1;
+println!("{r2}");
+// `r2` scope end
+// `s1` scope end
+```
 
 - can't use existing variable in meantime??
 
