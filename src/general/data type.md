@@ -64,7 +64,7 @@
 - composite from algebraic operation
 - can be sum or product
 - used to model complex data types
-- can think of customizable type
+- can think of custom data type
 - beware: in programming often called just "type" ❗️
 
 ### Sum

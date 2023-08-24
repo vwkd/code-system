@@ -21,7 +21,7 @@ index: 3
 - if the owner goes out of scope, the value is dropped
 - all data in memory is owned by single variable, not multiple
 - memory is dropped when variable goes out of scope, like usual for stack, deallocated on heap
-- prevents resource leaks
+- prevents most resource leaks
 - prevents use after free
 - prevents double free
 - rules checked at compile time
