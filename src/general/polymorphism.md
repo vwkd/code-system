@@ -4,19 +4,21 @@
 
 ## Introduction
 
-- ability of composite data type to be used with multiple different types
+- ability of composite data type to be used with multiple types
 - specifies base type, can use common functionality of base type, abstracts over concrete types
+- e.g. call method on type without knowing which concrete type it is
 - generates multiple implementations, one for each concrete type ("monomorphization")
-- static or dynamic is time when implementation is selected for type
-- is called generic
+- can be static or dynamic
 - allows extendable types
 - allows single implementation
+- also calls generic data type
 
 
 
 ## Static
 
 - implementation for type is selected at compile time
+- can think of duplicating code for each concrete type
 - needs static type information
 - no performance penalty
 - increased binary size due to duplication of generated code
