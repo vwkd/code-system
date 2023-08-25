@@ -181,11 +181,11 @@ eg Add operator
 
 ## Supertrait
 
-?? other trait that trait depends on
-struct that implement trait must also implement supertrait
-
-?? can define it similar to trait bound after name
-`trait MyTrait: SuperTrait { ... }`
+- trait that a trait requires being also implemented
+- type that implements trait must also implement supertrait
+- allows to depend on other traits
+- can specify multiple
+- syntax is like trait bound on name, multiple separated by plus
 
 
 
