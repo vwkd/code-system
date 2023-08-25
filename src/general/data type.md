@@ -10,6 +10,7 @@
 - can be scalar or composite
 - can be non-collection or collection
 - can be algebraic
+- can be generic
 
 
 
@@ -84,6 +85,13 @@
 - e.g. tuple, record, etc.
 - possible values is product of possible values of fields
 - used to represent combinations, groups, etc.
+
+
+
+## Generic
+
+- abstract data type that represents multiple concrete data types
+- enables polymorphism
 
 
 

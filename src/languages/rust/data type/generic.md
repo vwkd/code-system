@@ -4,14 +4,13 @@
 
 ## Introduction
 
-- abstract data type that resolves to concrete data type
-- enables polymorphism
+???
 
 
 
 ## Trait bound
 
-- trait that generic type must implement
+- trait that must implement
 - restricts what generic type can be
 - can specify multiple
 - must resolve to concrete type at compile time
