@@ -65,21 +65,17 @@ dynamically sized type
 
 
 
-## Trait Object
+## Supertrait
 
-- like trait bound, but
-- can resolve to concrete types at runtime
-- e.g. for return type of function can conditionally return different concrete types, generic collection over trait, etc.
-- enables dynamic polymorphism
-- syntax is following generic name and colon and `dyn`, multiple separated by plus
-- shorthand without naming generic directly with `dyn MyTrait`, but can't reuse generic at multiple places
-- must put behind some sort of reference, e.g. `Box`
-
-?? Size of concrete type that implements trait isn't known at compile time, could be anything...
+- trait that a trait requires being also implemented
+- type that implements trait must also implement supertrait
+- allows to depend on other traits
+- can specify multiple
+- syntax is like trait bound on name, multiple separated by plus
 
 
 
-## Trait Bound
+## Trait bound
 
 - trait that generic type must implement
 - restricts what generic type can be
@@ -93,6 +89,20 @@ dynamically sized type
 can only do for object-safe traits
 all methods on trait have no generic parameters and don't return self
 ? otherwise compile can't figure out concrete type
+
+
+
+## Trait object
+
+- like trait bound, but
+- can resolve to concrete types at runtime
+- e.g. for return type of function can conditionally return different concrete types, generic collection over trait, etc.
+- enables dynamic polymorphism
+- syntax is following generic name and colon and `dyn`, multiple separated by plus
+- shorthand without naming generic directly with `dyn MyTrait`, but can't reuse generic at multiple places
+- must put behind some sort of reference, e.g. `Box`
+
+?? Size of concrete type that implements trait isn't known at compile time, could be anything...
 
 
 
@@ -166,16 +176,6 @@ customize behavior of operator
 possible for operators that have associated traits in standard library ops module
 
 eg Add operator
-
-
-
-## Supertrait
-
-- trait that a trait requires being also implemented
-- type that implements trait must also implement supertrait
-- allows to depend on other traits
-- can specify multiple
-- syntax is like trait bound on name, multiple separated by plus
 
 
 
