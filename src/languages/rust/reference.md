@@ -111,6 +111,8 @@ deref allows to coerce to reference, can write code for reference and works
 
 ### Box
 
+smart pointer
+
 ??? Basic
 
 reference to Box of Type can be coerced to reference to Type
@@ -130,6 +132,8 @@ allows immutable or mutable borrows
 can convert to reference with `as_ref` method
 
 ### Rc
+
+smart pointer
 
 Reference counted smart pointer
 Not send and sync
@@ -162,6 +166,8 @@ weak count is number of references that don't have ownership of value
 
 ### Arc
 
+smart pointer
+
 Atomic Rc
 Send and sync
 
@@ -171,6 +177,8 @@ can use with mutex for shared ownership and mutability
 
 ### Weak
 
+smart pointer
+
 ? like Rc, but doesn't own value
 
 can create from Rc using `downgrade` method
@@ -179,6 +187,8 @@ can convert to Rc using `upgrade` method, returns some of value hasn't been drop
 ? always needs to upgrade if wants to use
 
 ### RefCell
+
+smart pointer
 
 ?? Can get temporary ownership to mutate Rc
 
