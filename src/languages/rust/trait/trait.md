@@ -57,10 +57,10 @@ dynamically sized type
 - to call associated function of trait can use explicit syntax `<MyStruct as MyTrait>::my_function(...)`
 - ?? if two traits have method or associated function with same name doesn't call any one by default, needs to use explicit syntax
 
-- can implement trait on type, except if both trait and type are foreign
+- can implement trait on type
 - enables extendable types
-- e.g. from standard library
-- to implement foreign trait on foreign type can create own wrapper type that implements foreign trait
+- can't implement trait on type if both trait and type are foreign, "orphan rule"
+- to implement foreign trait on foreign type can create own wrapper type that implements foreign trait, e.g. tuple struct
 - to access methods from original type can either implement desired methods manually on wrapper type or implement deref trait on wrapper type to access all
 - can derive standard implementation using `derive` attribute if trait has associated derive macro
 
