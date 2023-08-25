@@ -4,9 +4,9 @@
 
 ## Introduction
 
-- ability of identifier to represent multiple concrete composite data types
+- ability of identifier to represent multiple concrete data types
 - specifies base type, can use common functionality of base type, abstracts over concrete types
-- e.g. call method on type without knowing which concrete type it is
+- e.g. call method on composite type without knowing which concrete type it is
 - generates multiple implementations, one for each concrete type ("monomorphization")
 - can be static or dynamic
 - allows extendable types
