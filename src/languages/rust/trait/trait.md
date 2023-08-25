@@ -62,6 +62,7 @@ dynamically sized type
 - e.g. from standard library
 - to implement foreign trait on foreign type can create own wrapper type that implements foreign trait
 - to access methods from original type can either implement desired methods manually on wrapper type or implement deref trait on wrapper type to access all
+- can derive standard implementation using `derive` attribute if trait has associated derive macro
 
 
 
