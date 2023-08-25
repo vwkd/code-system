@@ -4,6 +4,6 @@
 
 ## Introduction
 
-- ability of composite data type to be used with only one specific type
+- ability of identifier to represent only one concrete composite data type
 - is called specialized
 - opposite of polymorphism
