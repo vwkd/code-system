@@ -5,10 +5,10 @@
 ## Introduction
 
 - set of values
-- can be primitive or composite
-- can be statically or dynamically sized
+- can be primitive or non-primitive
 - can be scalar or composite
 - can be non-collection or collection
+- can be statically or dynamically sized
 - can be algebraic
 - can be generic
 
@@ -16,9 +16,20 @@
 
 ## Primitive
 
+- built into language
+
+
+
+## Non-primitive
+
+- not built-in
+
+
+
+## Scalar
+
 - atomic, not composite
 - stores single value
-- also called scalar
 
 
 
@@ -32,7 +43,7 @@
 ## Non-collection
 
 - stores single value
-- usually primitive
+- usually scalar
 ?? no proper term
 
 
