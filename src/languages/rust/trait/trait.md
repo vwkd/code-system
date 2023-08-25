@@ -67,26 +67,15 @@ dynamically sized type
 
 ## Trait Object
 
-??? allows to treat different types that implement same trait as interchangeable
-
-??? dynamic dispatch
-
-?? allow to abstract over multiple types that share a common trait
+- like trait bound, but
+- can resolve to concrete types at runtime
+- e.g. for return type of function can conditionally return different concrete types, generic collection over trait, etc.
+- enables dynamic polymorphism
+- syntax is following generic name and colon and `dyn`, multiple separated by plus
+- shorthand without naming generic directly with `dyn MyTrait`, but can't reuse generic at multiple places
+- must put behind some sort of reference, e.g. `Box`
 
 ?? Size of concrete type that implements trait isn't known at compile time, could be anything...
-
-e.g. `dyn Animal`
-
-?? can put behind reference
-can use `Box` smart pointer
-e.g. `Box<dyn Animal>`
-
-??? Vector can't accept trait bound !?! Can make vector generic over trait only with dynamic polymorphism ?? Can make generic at all only using Dynamic polymorphism???
-?? can use in vector
-e.g. `Vec<Box<dyn Animal>>`
-
-a pointer + dyn keyword + trait
-pointer can be ??reference, Box
 
 
 
@@ -95,14 +84,15 @@ pointer can be ??reference, Box
 - trait that generic type must implement
 - restricts what generic type can be
 - can specify multiple
+- must resolve to concrete types at compile time
+- beware: can't resolve to concrete types at runtime, instead use trait object ❗️
+- enables static polymorphism
 - syntax is following generic name and colon, multiple separated by plus
 - shorthand without naming generic directly with `impl MyTrait`, but can't reuse generic at multiple places
 
 can only do for object-safe traits
 all methods on trait have no generic parameters and don't return self
 ? otherwise compile can't figure out concrete type
-
-- beware: for return type of function can't conditionally return different concrete types, instead use trait object ❗️
 
 
 
