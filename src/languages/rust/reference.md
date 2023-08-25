@@ -127,6 +127,8 @@ use e.g. for recursive enum
 
 allows immutable or mutable borrows
 
+can convert to reference with `as_ref` method
+
 ### Rc
 
 Reference counted smart pointer

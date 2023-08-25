@@ -10,6 +10,8 @@ for enum needs to specify default variant with `#[default]`
 can derive if all fields implement it too
 custom implementation if wants to custom default values
 
+- automatically imported because included in prelude
+
 
 
 ## Resources

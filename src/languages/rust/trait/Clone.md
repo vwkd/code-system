@@ -5,8 +5,9 @@
 ## Introduction
 
 - ability to copy value explicitly using `clone()`
-- can derive
 - "deep copy"
+- can derive
+- automatically imported because included in prelude
 
 
 
