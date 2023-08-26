@@ -56,6 +56,22 @@ strong pointer??: owns value
 
 
 
+## Mutability
+
+### Inherited
+
+- only mutable reference can mutate
+- prefer when possible
+
+### Interior
+
+- also immutable reference can mutate
+- last resort
+- used to mutate inside of immutable type, e.g. `Rc`, `Arc`, etc.
+- used to mutate through `clone` method
+
+
+
 ## Dereference
 
 - syntax of operator is leading star
