@@ -6,6 +6,9 @@
 
 ???
 
+implicitly has Sized trait bound
+can relax with ?Sized, needs to put behind pointer then
+
 
 
 ## Trait bound

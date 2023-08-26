@@ -12,9 +12,11 @@ index: 5
 - can be concrete or generic
 - uses static polymorphism
 
-??? like enum all fields must be statically sized
-generic type implicitly has Sized trait bound
-can relax with ?Sized, needs to put behind pointer then
+- itself stored on stack
+- can store members on heap by allocating in implementation block and storing reference in member
+- beware: type itself never stored on the heap, can only allocate in implementation ⚠️
+- beware: often refers to type itself being stored on heap ⚠️
+- all fields must be statically sized
 
 
 
