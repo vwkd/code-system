@@ -4,21 +4,19 @@
 
 ## Introduction
 
-smart pointer
+- smart pointer
+- stores value on the heap
+- used to transfer ownership ("derivation") of large value without copying it
+- used for trait object generic
+- used to make sized type from unsized type
+- automatically imported because included in prelude
+- only single ownership of value, for shared ownership see `Rc`
 
 ??? Basic
 
 reference to Box of Type can be coerced to reference to Type
 
-allows to allocate value on the heap
-
 not much extra functionality
-
-can use when needs sized type but doesn't know size
-can use when wants to transfer ownership of large value without copying it
-can use wir trait object, dynamic?? polymorphism, specifies trait instead of concrete type
-
-use e.g. for recursive enum
 
 allows immutable or mutable borrows
 
