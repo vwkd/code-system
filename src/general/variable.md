@@ -24,8 +24,40 @@
 
 ## Scope
 
-- region of code where is valid
-- lifetime
+- part of program where is valid
+- can be lexical or dynamic
+
+### Lexical
+
+- region of code
+- e.g. other function doesn't have access to scope of function where called from because is other region of code
+- can have gaps, holes
+- common
+
+### Dynamic
+
+- region of execution path
+- can also think of period of execution time
+- e.g. other function has access to scope of function where called from because it is still running
+- can't have gaps, holes
+- uncommon
+
+
+
+## Lifetime
+
+- time during which is valid
+- also called extend
+- beware: also often means part of scope where is actually valid ❗️
+
+### Lexical
+
+- equal to corresponding scope
+
+### Non-lexical
+
+- shorter or equal to corresponding scope
+- e.g. creation to last use
 
 
 
