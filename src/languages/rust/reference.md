@@ -11,6 +11,7 @@
 - immutable by default
 - can declare mutable only if variable is also mutable
 - to use owned value in outer scope needs to return it, can't return reference since would be dangling pointer
+- lifetime is shorter or equal to lifetime of borrowed value
 
 
 
@@ -62,30 +63,56 @@ strong pointer??: owns value
 
 
 
-## Lifetime annotation
+## Lifetime specifier
 
-???
+- description of relationship between lifetimes
+
+- beware: only for reference ❗️
+- beware: doesn't change actual concrete lifetime, no runtime effect, only satisfy type checking ❗️
+- also called generic lifetime annotation
+- beware: often just called lifetime, don't confuse with actual concrete lifetime ❗️
+
+- lifetime is inferred when possible
+- for function the lifetime of single reference parameter is assigned to all references in the return value
+- for borrowing method the lifetime of self is assigned to all references in the return value
+- can elide when inferred, otherwise needs to specify
+
+- syntax of declaration like generic, leading tick, by convention lowercase
+- syntax of use behind ampersand of reference
+- can use placeholder lifetime underscore to make explicit that it's inferred
+
+///
+
 minimum lifetime
 can assign any same type with longer lifetime
 - minimum lifetime of input reference, maximum lifetime of output reference
 - specified as another reference lifetime
 - ??usually output reference lifetime 
 - specifies minimum lifetime of output reference is at least lifetime of input reference, not exact same lifetime
-- beware: doesn't change lifetime, just clarifies relationships!
-- necessary when can't infer ("elide")
-  - references in function return type with multiple references in function arguments
-  - references in struct field and any implementations
-- beware: only ever used on references!
-- type of generic
-- static lifetime is duration of whole program
 
-can use underscore to infer single lifetime since uniquely determined, "anonymous lifetime" ?? STILL NECESSARY WITH NEW COMPILER
 underscore also used to ignore lifetime in argument ?? very confusing if used in return type to, since same symbol but not same lifetime
 e.g. `fn foo(x: &str, y: &'_ str) -> &'_ str { x }`
 
 can specify that one lifetime lives at least as long as other, like trait bound ??? `<'newLifetime: 'existingLifetime>`
 
 ?? like subtypes
+
+///
+
+-> can use immutable and mutable references in same scope, as long as lifetimes don't overlap
+
+lifetime of return value is equal to shortest lifetime passed in
+
+if returns reference
+lifetime of return value must be tied to lifetime of input parameters
+because reference to owned value inside function would be invalid since dropped at return
+except for static lifetime
+can return value with static lifetime instead since lives at least as long
+
+e.g. reference return value of function with multiple reference arguments
+e.g. reference in struct, also in implementation block
+
+when same GLA for multiple input lifetimes takes on shortest concrete input lifetime
 
 
 
