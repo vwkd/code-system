@@ -12,8 +12,12 @@ index: 7
 - can be concrete or generic
 - uses static polymorphism
 
-?? stored on stack, all variants must be sized ??
-?? size is equal to size of largest variant
+- itself stored on stack
+- can store members on heap by allocating in implementation block and storing reference in member
+- beware: type itself never stored on the heap, can only allocate in implementation ⚠️
+- beware: often refers to type itself being stored on heap ⚠️
+- all variants must be statically sized
+- size is equal to size of largest variant
 
 
 
