@@ -57,3 +57,15 @@ global variables
 - can use for large amounts of data, needs single fixed memory address, or when needs interior mutability
 
 must have static lifetime
+
+
+
+## Lifetime
+
+- non-lexical lifetime
+- from creation until last use
+
+### Static
+
+- entire duration of program
+- built-in
