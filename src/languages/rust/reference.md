@@ -60,12 +60,14 @@ strong pointer??: owns value
 
 ### Inherited
 
-- only mutable reference can mutate
+- mutability only through mutable reference
+- can mutate value only if declared mutable
 - prefer when possible
 
 ### Interior
 
-- also immutable reference can mutate
+- mutability through immutable reference
+- beware: can mutate value even if declared immutable ❗️
 - last resort
 - used to mutate inside of immutable type, e.g. `Rc`, `Arc`, etc.
 - used to mutate through `clone` method
