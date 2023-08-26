@@ -59,6 +59,7 @@
 
 - size known at compile time
 - size is fixed
+- also called sized
 
 
 
@@ -68,6 +69,7 @@
 - size can grow and shrink
 ?? has extra bit of metadata that stores size of data
 - must use behind some sort of reference
+- also called unsized
 
 
 
