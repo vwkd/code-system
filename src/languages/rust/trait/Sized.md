@@ -4,8 +4,7 @@
 
 ## Introduction
 
-? implemented for statically sized types
-
+- automatically implemented, can't manually implement
 - automatically imported because included in prelude
 
 
