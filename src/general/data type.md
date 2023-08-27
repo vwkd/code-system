@@ -108,4 +108,11 @@
 
 
 
+## Coercion
+
+- conversion of one type into another type
+- usually automatic, implicit
+
+
+
 ## Resources
