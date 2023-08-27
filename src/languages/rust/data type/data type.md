@@ -62,11 +62,3 @@ index: ???
 ### Array
 
 ### Tuple
-
-
-
-## Coercion
-
-automatic conversion of type into another type
-
-enables dieting methods calls ?? Also fiction carols, variables assignments ??
