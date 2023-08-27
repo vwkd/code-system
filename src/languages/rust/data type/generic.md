@@ -6,8 +6,10 @@
 
 ???
 
-implicitly has Sized trait bound
-can relax with ?Sized, needs to put behind pointer then
+- by default only for statically sized types
+- implicitly has `Sized` trait bound
+- can remove with special question mark prefix `?Sized`
+- beware: opt-out instead of opt-in ❗️
 
 
 

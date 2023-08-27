@@ -10,11 +10,6 @@ index: 6
 - can be concrete or generic
 - uses static polymorphism
 
-generic implicitly has Sized trait bound
-generic by default only for statically sized types
-can relax by prefixing with question mark ?Sized
-parameter then needs to be some sort of pointer
-
 
 
 ## Declaration
