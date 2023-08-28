@@ -4,10 +4,8 @@
 
 ## Introduction
 
-- ability to dereference reference to type
-- allows to use deref coercion
-- allows to use smart pointers like reference
-- beware: should only use for smart pointer ❗️
+- ability to use deref coercion
+- beware: should only implement for smart pointer ❗️
 
 
 
@@ -16,7 +14,7 @@
 - for immutable reference
 - `deref` method gives reference to underlying value
 - dereference operator calls `deref` method
-- beware: `deref` bad name, because only gives other reference, dereference operator does actual dereferencing ❗️
+- beware: `deref` bad name, dereference operator does actual dereferencing ❗️
 
 
 
