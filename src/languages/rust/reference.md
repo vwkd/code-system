@@ -68,6 +68,7 @@ strong pointer??: owns value
 ### Interior
 
 - mutability through immutable reference
+- uses immutable type that mutates interior value through methods
 - beware: can mutate value even if declared immutable ❗️
 - last resort
 - used to mutate inside of immutable type, e.g. `Rc`, `Arc`, etc.

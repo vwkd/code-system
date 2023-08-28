@@ -5,14 +5,13 @@
 ## Introduction
 
 - smart pointer
-- provides reference checked at runtime
 - allows interior mutability
 - checks borrowing rules dynamically at runtime
-- no borrow rules check statically at compile time
 - panics at runtime if violates borrowing rules
-- performance penalty due to extra borrowing rules check
+- doesn't check borrowing rules statically at compile time
+- performance penalty due to extra check at runtime
 - internally uses unsafe code to bypass limitations
-- only single ownership over value, like Box
+- only single ownership over value, like `Box`
 - only single-threaded, not `Sync`
 - for multiple threads see `RwLock`
 
