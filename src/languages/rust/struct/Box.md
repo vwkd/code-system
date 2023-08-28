@@ -14,6 +14,9 @@
 
 can convert to reference with `as_ref` method
 
+- implements closure traits
+- can use boxed closure trait object where expects generic with closure trait bound
+
 
 
 ## Resources
