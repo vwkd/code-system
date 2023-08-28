@@ -92,7 +92,8 @@ strong pointer??: owns value
 - until type that doesn't implement `Deref`
 - converts reference of type to reference of contained type
 - beware: doesn't dereference last reference to primitive type ❗️
-- allows to write code for reference of contained type and use with reference to any wrapper type too
+- allows to use reference to any wrapper type like reference of contained type
+- best practice to accept reference of contained type to be most general
 - e.g. `&String` for `&str`
 - beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
 - at compile time
