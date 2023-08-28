@@ -4,6 +4,8 @@
 
 ## Introduction
 
+smart pointer
+
 - collection type
 - list of values
 - dynamic length

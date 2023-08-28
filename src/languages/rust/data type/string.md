@@ -16,6 +16,8 @@ index: 4
 
 ? similar to `Vec<char>`
 
+smart pointer
+
 - `String`
 - heap-allocated growable owned
 - UTF-8 encoding

@@ -27,4 +27,13 @@
 
 
 
+## Smart pointer
+
+- algebraic data type that behaves like reference
+- as transparent as possible
+- has additional metadata and capabilities
+- can think of better reference
+
+
+
 ## Resources

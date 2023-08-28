@@ -171,23 +171,10 @@ when same GLA for multiple input lifetimes takes on shortest concrete input life
 
 ## Smart Pointer
 
+- usually struct
+- usually implements `Deref` and `Drop` traits
+- usually owns value
 ?? stores value on the heap
-- manages memory for you
-
-pointer to a type
-provides some behavior beyond a raw pointer
-as transparent as possible through the Deref trait and deref coercion
-
-extra metadata and capabilities
-
-usually owns the value
-
-String and Vec are smart pointers
-
-struct that implements deref and deep traits
-deref allows to coerce to reference, can write code for reference and works
-
-?? implements drop trait, deallocates memory
 
 
 
