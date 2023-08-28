@@ -6,8 +6,6 @@ index: 6
 ## Introduction
 
 - expression
-- can pass as value
-- e.g. assign to variable, pass to function, return from function
 - can't close over outer-scope variables
 - can be concrete or generic
 - uses static polymorphism

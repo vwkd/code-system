@@ -22,6 +22,9 @@
 - unit of code that evaluates to a value
 - e.g. `1 + 2`, function call, etc.
 
+- can pass as value
+- e.g. assign to variable, pass to function, return from function, etc.
+
 
 
 ## Memory
