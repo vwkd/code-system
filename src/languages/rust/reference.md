@@ -200,15 +200,16 @@ beware: `*` isn't dereference operator
 
 ## Function Pointer
 
-- pointer to function
-??? like reference to function, but ???
-- can think of pointer to code instead of data
-- implicit, doesn't have visible difference to function
-- beware: can't create itself, instead get by casting function or closure that doesn’t capture variables ❗️
-- can be called like function
+- pointer to element of set of functions with given signature
+- beware: not reference to function, not of specific unique anonymous type ❗️
+- can think of pointer to block of code with a input-output signature instead of value of a type
+- beware: can't create itself, instead gets from casting function or closure that doesn’t capture variables ❗️
+- can call like function
+- can use like function
+- beware: don't confuse with specific anonymous unique function type ❗️
 - has static lifetime
 - implements all three closure traits `Fn`, `FnMut`, `FnOnce`
 - can pass in place of closure
+- beware: don't confuse with closure ❗️
 - best practice to accept closure to be most general
 - syntax is lowercase `fn`
-- beware: don't confuse with closure ❗️
