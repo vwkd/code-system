@@ -12,6 +12,7 @@
 - can declare mutable only if variable is also mutable
 - to use owned value in outer scope needs to return it, can't return reference since would be dangling pointer
 - lifetime is shorter or equal to lifetime of borrowed value
+- also calls shared for immutable, unique for mutable
 
 
 
@@ -42,7 +43,7 @@ println!("{r2}");
 
 - can't use existing variable in meantime??
 
-mutable reference coerces to immutable reference
+- mutable reference can coerce to immutable reference
 
 note, reference and value aren't equal, different types, e.g. `5 == &5`
 
@@ -77,42 +78,24 @@ strong pointer??: owns value
 ## Dereference
 
 - syntax of operator is leading star
-- type needs to implement `Deref` and `DerefMut` traits
 
 ### Coercion
 
-- automatic dereferencing 
-
-??? only one reference to other
-not to last underlying value
-
-- converts reference of one type to reference of other type
-
-- allows to use reference to wrapper type like reference to regular type, e.g. smart pointer
-in same place as
-- allows to implement only for reference to regular type and use with reference to wrapping type, e.g. `&str` instead of `&String`
-
-- can think of adding deref operators automatically
-- as many times as possible
-- resolves chain of references, cascades
-
+- automatic dereferencing of smart pointer
+- type needs to implements `Deref` and `DerefMut` traits
+- can think of inserting dereference operator
 - beware: implicit, automagical ❗️
-
+- converts reference of type to reference of contained type
+- allows to use reference of type transparently like reference of contained type
+- beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
+- allows to write code for reference of contained type and use with reference to any wrapper type too
+- e.g. `&String` for `&str`
+- as many times as necessary, multiple
+- resolves chain of types, cascades
+- until type that doesn't implement `Deref`
+- beware: doesn't dereference last reference to primitive type ❗️
 - at compile time
 - no performance penalty
-
-- coerces im/mutable reference to immutable, mutable to mutable
-- beware: not mutable reference to immutable reference, would break borrowing rules ❗️
-
-allows to treat type the same as reference, use in same places, e.g. with dereference operator
-
-ambiguity if containing type also defines methods
-by convention use functions rather than methods
-
-- automatically applies the `*` operator to values of types that implement the `Deref` trait
-- allows using methods and fields of the target type directly on values of the source type that implements `Deref`.
-- follows a chain of types that implement `Deref` until it reaches a type that doesn't implement `Deref`
-- beware: doesn't dereference last step down to primitive values or non-reference types, needs to manually dereference ❗️
 
 
 
