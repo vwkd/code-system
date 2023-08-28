@@ -81,19 +81,19 @@ strong pointer??: owns value
 
 ### Coercion
 
-- automatic dereferencing of smart pointer
+- automatic dereferencing of smart pointer type
 - type needs to implements `Deref` and `DerefMut` traits
 - can think of inserting dereference operator
 - beware: implicit, automagical ❗️
-- converts reference of type to reference of contained type
-- allows to use reference of type transparently like reference of contained type
-- beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
-- allows to write code for reference of contained type and use with reference to any wrapper type too
-- e.g. `&String` for `&str`
+- allows to use type transparently like reference of contained type
 - as many times as necessary, multiple
 - resolves chain of types, cascades
 - until type that doesn't implement `Deref`
+- converts reference of type to reference of contained type
 - beware: doesn't dereference last reference to primitive type ❗️
+- allows to write code for reference of contained type and use with reference to any wrapper type too
+- e.g. `&String` for `&str`
+- beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
 - at compile time
 - no performance penalty
 
