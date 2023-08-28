@@ -5,9 +5,9 @@
 ## Introduction
 
 - smart pointer
-- stores value on heap
+- counts references
 - allows shared ownership of value
-- keeps reference count
+- beware: multiple owners is misleading, itself is single owner, others only have references ❗️
 - increments reference count for each new reference
 - cleans up when reference count reaches zero
 - like light with sensor, first person who enters turns it on, after last person leaves turns itself off
@@ -15,6 +15,7 @@
 - strong count is number of references that have ownership of value
 - weak count is number of references that don't have ownership of value
 ? beware: can still have non-zero weak count after value is dropped
+- stores value on heap
 - not `Send` and `Sync`
 - only for single-threaded, for multi-threaded see `Arc`
 - only immutable borrows, mutable would violate borrowing rules
