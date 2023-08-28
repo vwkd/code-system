@@ -11,7 +11,7 @@ index: 6
 - uses static polymorphism
 
 - anonymous unique type
-- beware: can't specify type, instead coerce to function points or closure ❗️
+- beware: can't specify concrete type, instead coerce to function pointer or closure ❗️
 - zero-sized
 - implements the Fn\* traits
 - coerces to function pointer
