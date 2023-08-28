@@ -195,3 +195,20 @@ beware: `*` isn't dereference operator
 ```
 
 beware: `*` isn't dereference operator
+
+
+
+## Function Pointer
+
+- pointer to function
+??? like reference to function, but ???
+- can think of pointer to code instead of data
+- implicit, doesn't have visible difference to function
+- beware: can't create itself, instead get by casting function or closure that doesn’t capture variables ❗️
+- can be called like function
+- has static lifetime
+- implements all three closure traits `Fn`, `FnMut`, `FnOnce`
+- can pass in place of closure
+- best practice to accept closure to be most general
+- syntax is lowercase `fn`
+- beware: don't confuse with closure ❗️
