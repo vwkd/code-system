@@ -77,7 +77,42 @@ strong pointer??: owns value
 ## Dereference
 
 - syntax of operator is leading star
-- automatic dereferencing
+- type needs to implement `Deref` and `DerefMut` traits
+
+### Coercion
+
+- automatic dereferencing 
+
+??? only one reference to other
+not to last underlying value
+
+- converts reference of one type to reference of other type
+
+- allows to use reference to wrapper type like reference to regular type, e.g. smart pointer
+in same place as
+- allows to implement only for reference to regular type and use with reference to wrapping type, e.g. `&str` instead of `&String`
+
+- can think of adding deref operators automatically
+- as many times as possible
+- resolves chain of references, cascades
+
+- beware: implicit, automagical ❗️
+
+- at compile time
+- no performance penalty
+
+- coerces im/mutable reference to immutable, mutable to mutable
+- beware: not mutable reference to immutable reference, would break borrowing rules ❗️
+
+allows to treat type the same as reference, use in same places, e.g. with dereference operator
+
+ambiguity if containing type also defines methods
+by convention use functions rather than methods
+
+- automatically applies the `*` operator to values of types that implement the `Deref` trait
+- allows using methods and fields of the target type directly on values of the source type that implements `Deref`.
+- follows a chain of types that implement `Deref` until it reaches a type that doesn't implement `Deref`
+- beware: doesn't dereference last step down to primitive values or non-reference types, needs to manually dereference ❗️
 
 
 

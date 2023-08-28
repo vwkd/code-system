@@ -120,6 +120,12 @@ These can be lifetime or type parameters
 
 Often, this occurs when the associated type wants to include data borrowed from self or some other parameter
 
+///
+
+like generic but defined only once per implemenetation
+
+e.g. “smart pointer” should only ever be dereferenceable to a single other type
+
 
 
 ## Blanket Imlementations
