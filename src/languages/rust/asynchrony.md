@@ -1,6 +1,25 @@
-???
+# Asynchrony
 
-allows concurrency
+
+
+## Introduction
+
+async await
+special syntax
+pause execution
+yield control back to the runtime
+other code can make progress
+then pick back up later where left off
+can write async code that looks like sync code
+
+async keyword is syntax sugar for returning impl Future ???with associated type Output
+
+
+
+
+
+
+enables concurrency
 
 similar to JavaScript
 Future is Promise
@@ -42,3 +61,7 @@ mutex uses interior mutability
 beware: risk of deadlocks
 
 send and sync traits??
+
+
+
+## Resources
