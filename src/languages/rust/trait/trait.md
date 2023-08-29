@@ -126,6 +126,9 @@ like generic but defined only once per implemenetation
 
 e.g. “smart pointer” should only ever be dereferenceable to a single other type
 
+like generic that's restricted to one concrete type per trait implementation
+can't implement same trait for same type more than once
+
 
 
 ## Blanket Imlementations

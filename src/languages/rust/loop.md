@@ -19,6 +19,14 @@ index: ???
 - loop through collection
 irrefutable pattern
 
+- just sugar for iteration
+- plain identifier uses `.into_iter()`
+- beware: default is to consume collection ❗️
+- `&` identifier uses `.iter()`
+- `&mut` identifier uses `.iter_mut()`
+- loops until iterator returns `None`
+- can think of `while let Some(myvalue) = myiterator.next() { ... }`
+
 
 
 ## while loop

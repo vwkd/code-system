@@ -1,46 +1,87 @@
----
-title: Iterator
-index: 12
----
+# Iterator
+
+
 
 ## Introduction
 
-? type that's iterable, allows iteration
-
-- implements `Iterator` trait
-- only needs to implement associated type and `next` method, rest have default implementation
-
-- `iter()` gives immutable reference to values
-- `iter_mut()` gives mutable reference to values
-- `into_iter()` gives owned values
-- beware: `into_iter()` consumes collection, data is then dropped, can't use again!
-- can get next value using `next()` method
-- iterator is lazy, computes next value only when calls `next()`
-- iterator variable needs to be mutable because `next()` changes internal state of iteration
-
-zero cost abstraction, no runtime overhead
+- ability to iterate over type
+- provides common interface for iteration
+- abstracts away over concrete implementation of iteration
+- zero-cost abstraction, no runtime overhead
+- lazy evaluation
 
 
 
-## For loop
+## Implementation
 
-- can iterate over using for loop
-- just sugar
-- plain identifier sugar for `.into_iter()`
-- `&` identifier sugar for `.iter()`
-- `&mut` identifier sugar for `.iter_mut()`
-- beware: default is to consume iterator!
-
-for loop is equivalent to
-`while let Some(myvalue) = myiterator.next() { ... }`
+- usually implements on wrapper type
+- allows to separate iterator state from value
+- allows contained value to be immutable
+- can make wrapping type transparent by implementing `IntoIterator` for contained type, `into_iter` method returns wrapping type
+- only needs to implement `next` method and associated type
+- other methods have default implementation
+- `Item` associated type is type that's iterated over
+- `next` method returns `Some(Item)`, changes internal state of iteration, if at end returns `None`
+- beware: may resume iteration again after end ❗️
+- note: by default also implements `IntoIterator` that returns itself
 
 
 
 ## Usage
 
-- adaptor methods return another iterator, e.g. `map`, `filter`, etc.
-- consumer methods return other type, e.g. `sum`, `collect`, etc.
-- can chain multiple adaptor methods and then single consumer method
-- beware: without consumer method doesn't do anything since is lazy!
+- usually type implements `IntoIterator`
+- usually type also implements methods `iter()`/ `iter_mut()`
+- usually type also implements `IntoIterator` for im/mutable reference that calls `iter()`/ `iter_mut()`
 
-`eq` method compares iterators of same type, is compared element-wise, no need to collect into `Vec` to compare
+### `iter()`
+
+- get iterator over immutable reference to values
+- beware: name convention, only used in for loop ❗️
+
+### `iter_mut()`
+
+- get iterator over mutable reference to values
+- beware: name convention, only used in for loop ❗️
+- doesn't implement if mutation doesn't make sense, e.g. `HashSet`
+
+
+
+## Adaptor
+
+- method that returns another iterator
+- before consumer
+- can chain multiple
+- doesn't evaluate since lazy
+
+### `map`
+
+### `filter`
+
+
+
+## Consumer
+
+- method that returns other type
+- after adaptors
+- can use only one
+- starts evaluation
+
+### `next`
+
+- get next value in iteration
+- iterator variable needs to be mutable because changes internal state of iteration
+- used by other consumers under the hood
+
+### `collect`
+
+### `sum`
+
+### `eq`
+
+- compares iterators of same type
+- is compared element-wise
+- no need to collect into `Vec` to compare
+
+
+
+## Resources
