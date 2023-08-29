@@ -1,59 +1,57 @@
----
-title: Macro
-index: ???
----
+# Macro
+
+
 
 ## Introduction
 
-code which writes other code
-like function whose input is code and output is other code
-
-enables meta programming
-
-runs during compile time
-generates or modifies other code
-
-allow to define custom syntax
-
-hygienic
-variables and identifiers are scoped to macro, don't clash with surrounding scope
-
-can accept variable number of parameters
-function which must declare fixed number of parameters
-
-can pass different types as parameters
-
-expanded at compile time
-functions are called at runtime
-
-declarative or procedural
+- expanded after AST is constructed, before semantic analysis validates AST
+- can be declarative or procedural
 
 
 
 ## Declarative
 
-matches against pattern
+- matches against pattern
+- maps input patterns to match arms
+- beware: different pattern syntax than in match expression ❗️
+- can accept variable number of arguments
+- can pass different types as arguments
+- also called macro by example
+- most widely used form
 
-most widely used form
+### Declaration
 
-vec!
+- can contain other macros
+- variables and identifiers are scoped to macro
+- doesn't leak into surrounding scope
 
-defined like match expression
-maps input patterns to match arms
+### Usage
 
-different pattern syntax than in match expression
+- calls with exclamation mark and grouping tokens
+- e.g. parentheses, brackets, curly brackets, etc.
 
 
 
 ## Procedural
 
-takes code as input, produce code as output
+- function with token stream input and token stream output
+- currently must be defined in own crate with special crate type
 
-custom-derived
-attribute-like
-function-like
+### function-like
 
-defined like function, takes token stream and returns token stream
+- like declarative
+
+### custom derive
+
+- argument to `derive` attribute
+- can't have arguments
+- allows automatic implementations for user-defined types
+- e.g. functions, traits, modules, etc.
+
+### attribute-like
+
+- own attribute
+- can have arguments
 
 
 

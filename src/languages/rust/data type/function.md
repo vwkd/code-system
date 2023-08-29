@@ -21,7 +21,8 @@ index: 6
 
 ## Declaration
 
-- no variable number of arguments, no rest parameters, no default values
+- fixed number of arguments
+- beware: no variable number of arguments, no rest parameters, no default values ❗️
 - parameter takes irrefutable pattern
 - obligatory type annotations for arguments and return type since can't infer
 - immutable parameters by default, can declare mutable
