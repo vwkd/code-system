@@ -67,10 +67,10 @@
 - takes other functions as arguments and/or returns new function as result
 - operates on functions
 - can think of function of functions
+- combines functions
+combines, manipulates, transforms functions into new function
 - also called functional, operator
 - needs first-class functions
-
-e.g. forEach, map, filter, sort, reduce, etc.
 
 
 
@@ -99,44 +99,10 @@ e.g. forEach, map, filter, sort, reduce, etc.
 
 ## Combinator 
 
-- method
-- can be chained
-- performs single function
-
-declarative
-
-higher-order function
-usually pure
-
- can be used to construct control flow modularly
- 
- uses earlier defined combinators and argument functions
-
-combines other functions
-
-manipulates other functions generally
-instead of operating on non-function things directly
-
-high-level operations instead of low-level details
-
-modular and decoupled systems
-
- used to compose and manipulate functions to create more complex operations
-  don't rely on mutable state
-  avoid side effects
-  usually referentially transparent (the result of a function only depends on its input).
-
-combine, manipulate, transforms functions into new function
-
-combines or transforms other functions
-used in functional programming
- 
-powerful way to compose functions and build complex behaviors from simpler ones
-
-associated with functional programming paradigms
- combine simpler functions in a structured and modular manner
- enable to build complex behaviors
- promotes code reusability, maintainability, and readability
+- higher-order pure function for a single task that can chain
+- makes operations declarative and modular
+- usually implemented as method on algebraic data type that returns new instance of same type
+- e.g. forEach, map, filter, sort, reduce, etc.
 
 
 
