@@ -15,6 +15,7 @@ index: 11
 - replaces interfaces and inheritance in other languages
 - convention is to name after capitalized verb, e.g. `Clone`, `Copy`
 - can think of as adjective, e.g. copyable, clonable, etc.
+- called marker if empty, used only as label
 
 
 

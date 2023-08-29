@@ -4,9 +4,10 @@
 
 ## Introduction
 
-- type is safe to send between threads
+- marker trait
+- ability to transfer ownership between threads
+- safe to send type across threads
 - automatically implemented, unless contains type that isn't `Sync`
-e.g. if contains `Rc<..>`, could use `Arc<..>` instead
 - automatically imported because included in prelude
 
 
