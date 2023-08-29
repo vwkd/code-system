@@ -44,6 +44,8 @@ matching and binding against the structure of a type
 - can add more branches with `else if let`
 - can think of maybe branch
 
+can do AND by matching tuple of both
+
 
 
 ## `if`
