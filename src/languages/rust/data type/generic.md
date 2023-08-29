@@ -4,8 +4,6 @@
 
 ## Introduction
 
-???
-
 - by default only for statically sized types
 - implicitly has `Sized` trait bound
 - can remove with special question mark prefix `?Sized`
@@ -41,6 +39,8 @@ all methods on trait have no generic parameters and don't return self
 - must put behind some sort of reference, e.g. `Box`
 
 ?? Size of concrete type that implements trait isn't known at compile time, could be anything...
+
+dynamically sized type
 
 
 

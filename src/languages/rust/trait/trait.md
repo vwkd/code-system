@@ -16,23 +16,6 @@ index: 11
 - convention is to name after capitalized verb, e.g. `Clone`, `Copy`
 - can think of as adjective, e.g. copyable, clonable, etc.
 
-?? generics also enable polymorphism, reuse code for multiple types, abstracted over types
-
-generics can be bound by traits, allows any type that implements trait
-
-traits use static dispatch by default
--> efficient code generation
-
-Static polymorphism using
-generics and usually trait bounds
-
-Dynamic polymorphism using
-trait objects
-
-
-dynamically sized type
-? that's why trait object need to be behind pointer
-
 
 
 ## Declaration
@@ -42,6 +25,7 @@ dynamically sized type
 - optionally can provide default implementation
 - beware: implementation can always overwrite default implementation ❗️
 - beware: method with default implementation can call method without, needs to implement that one then ❗️
+- can use generics and associated types
 
 
 
@@ -63,6 +47,32 @@ dynamically sized type
 - to implement foreign trait on foreign type can create own wrapper type that implements foreign trait, e.g. tuple struct
 - to access methods from original type can either implement desired methods manually on wrapper type or implement deref trait on wrapper type to access all
 - can derive standard implementation using `derive` attribute if trait has associated derive macro
+- specifies concrete types for generics and associated types
+
+### Generic
+
+- multiple implementations of trait for type
+- for multiple concrete generic types
+- specifies in `impl` header
+- needs extra type annotations to distinguish multiple concrete generic types
+- can think of generic type as input
+- specified by user of type
+
+### Associated type
+
+- only one implementation of trait for type
+- for single concrete associated type
+- specifies in `impl` block
+e.g. can dereference smart pointer only to a single other type
+- no extra type annotations
+- can think of associated type as output
+- specified by type itself
+
+### GAT
+
+- like associate type, but
+- can use trait method parameter types and lifetimes
+- can think of mix of generic and associated type
 
 
 
@@ -73,61 +83,6 @@ dynamically sized type
 - allows to depend on other traits
 - can specify multiple
 - syntax is like trait bound on name, multiple separated by plus
-
-
-
-## Associated Type
-
-? If the type acts as an input, it should be a generic type parameter
-If it acts as an output, it should be an associated type
-
-generics allow multiple implementations, associated types are specific
-when wants only one implementation for any given type
-? also don't need to specify generic when use concrete type
-
-type placeholder of trait
-can use in signatures of method definitions
-concrete type specified in implementation
-allows to define trait without knowing concrete types until implementation
-
-using generics must annotate the types in each implementation
-could have multiple implementations of trait for a type
-trait can be implemented for a type multiple times, changing the concrete types of the generic type parameters each time
-would have to provide type annotations when instances to indicate which implementation of trait wants to use
-
-can’t implement a trait on a type multiple times
-don’t need to annotate types
-
-capture types that appear in methods but are determined based on the impl that is chosen (i.e., by the type implementing the trait) rather than being specified from the outside
-
-////
-
-placeholder type
-methods can use it
-
-unknown until implementation
-concrete type specified at implementation
-
-can have only one concrete type in all implementations
-different from generic where can have multiple implementations for different concrete types
-
-### GAT
-
-generic associated types are an extension that permit associated types to have generic parameters.
-
-allows associated types to capture types that may include generic parameters that came from a trait method
-These can be lifetime or type parameters
-
-Often, this occurs when the associated type wants to include data borrowed from self or some other parameter
-
-///
-
-like generic but defined only once per implemenetation
-
-e.g. “smart pointer” should only ever be dereferenceable to a single other type
-
-like generic that's restricted to one concrete type per trait implementation
-can't implement same trait for same type more than once
 
 
 

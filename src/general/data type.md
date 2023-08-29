@@ -10,7 +10,7 @@
 - can be non-collection or collection
 - can be statically or dynamically sized
 - can be algebraic
-- can be generic
+- can be generic, associated
 
 
 
@@ -103,8 +103,17 @@
 
 ## Generic
 
-- abstract data type that represents multiple concrete data types
+- abstract data type
+- represents multiple concrete data types
 - enables polymorphism
+
+
+
+## Associated
+
+- type alias associated with another type
+- represents single concrete type
+- can think of placeholder
 
 
 
