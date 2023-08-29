@@ -213,3 +213,4 @@ beware: `*` isn't dereference operator
 - beware: don't confuse with closure ❗️
 - best practice to accept closure to be most general
 - syntax is lowercase `fn`
+- also called function signature, in contrast to specific unique anonymous function type
