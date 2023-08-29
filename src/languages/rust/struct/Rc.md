@@ -17,7 +17,8 @@
 ? beware: can still have non-zero weak count after value is dropped
 - stores value on heap
 - not `Send` and `Sync`
-- only for single-threaded, for multi-threaded see `Arc`
+- only for single-threaded, not thread-safe
+- for multi-threaded see `Arc`
 - only immutable borrows, mutable would violate borrowing rules
 - for shared mutability wrap value in `RefCell`
 
