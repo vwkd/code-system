@@ -17,6 +17,18 @@ index: 11
 - can think of as adjective, e.g. copyable, clonable, etc.
 - called marker if empty, used only as label
 
+it's also a type
+dynamically sized
+
+Self
+implicit type parameter of trait
+type that is implemented on
+can think of pseudo syntax `impl MyTrait<MyStruct> {..}`
+Self is by default unsized, Self: ?Sized
+default trait methods can't return Self by value or take it as a parameter by value
+needs either to specify that Self must be sized by default `trait MyTrait: Sized { ... }`
+or that a method can only be called if Self is sized
+
 
 
 ## Declaration
@@ -126,3 +138,9 @@ pub trait IteratorExt: Iterator { .. }
 
 impl<T: Iterator> IteratorExt for T { .. }
 ```
+
+
+
+## Resources
+
+- [Stack Overflow - Why is the `Sized` bound necessary in this trait?](https://stackoverflow.com/a/30941589/2607891)
