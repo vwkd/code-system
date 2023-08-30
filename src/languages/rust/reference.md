@@ -176,9 +176,34 @@ can convert reference to raw pointer using `as` cast??
 
 can dereference only in unsafe block
 
+
+not bound by borrowing rules
+allows mutable and immutable references to a value at same time
+also multiple mutable
+can be null or point to invalid memory
+not automatically cleaned up
+
+can create by casting reference
+immutable from immutable reference with `as *const T`
+mutable from mutable reference with `as *mut T`
+
+or by casting arbitrary memory address
+
+immutable
+can't be assigned after dereferenced
+
+creation is safe
+unsafe to dereference
+
+used for
+achieve greater performance
+ability to interface with other languages￼
+ability to build safe abstractions that the borrow checker doesn't understand ￼
+to interface with hardware
+
 ### immutable
 
-? can't be assigned after has been dereferenced
+can't be assigned after dereferenced
 
 ```rs
 *const TYPE
