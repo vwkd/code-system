@@ -58,6 +58,10 @@ global variables
 
 must have static lifetime
 
+access immutable is safe
+accessing or modifying mutable static variable is unsafe
+parallel access could lead to data race
+
 
 
 ## Lifetime
