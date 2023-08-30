@@ -11,7 +11,7 @@
 
 ## Declarative
 
-- matches against pattern
+- matches pattern against single token tree
 - maps input patterns to match arms
 - beware: different pattern syntax than in match expression ❗️
 - can accept variable number of arguments
