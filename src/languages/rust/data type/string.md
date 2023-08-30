@@ -9,30 +9,7 @@ index: 4
 - more complicated, but more correct
 - can not be indexed, because one byte could be part of a multi-byte character
 - beware: `.chars()` gets scalar values, not grapheme clusters, one grapheme cluster might have multiple scalar values, can use external `unicode-segmentation` crate
-
-
-
-## Owned string
-
-? similar to `Vec<char>`
-
-smart pointer
-
-- `String`
-- heap-allocated growable owned
-- UTF-8 encoding
-- like `Vec<u8>` but always valid UTF-8
-
-?? is already a pointer to data on the heap
-?? every heap-allocated data type is a pointer to a value on the heap
-reference is a pointer to a pointer
-avoid extra layers of indirection, e.g. pointer to pointer to pointer...
-function argument type should be coercion target, e.g. `&str` instead of `&String`, slice instead of array or vector
-
-implements deref trait to str
-
-- in standard library
-- automatically imported because included in prelude
+- multiple data types, `str`, `String`
 
 
 
