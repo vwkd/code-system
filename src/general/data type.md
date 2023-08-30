@@ -16,7 +16,7 @@
 
 ## Primitive
 
-- built into language
+- built-in
 
 
 
@@ -28,14 +28,14 @@
 
 ## Scalar
 
-- atomic, not composite
-- stores single value
+- not made up of other types
+- atomic
 
 
 
 ## Composite
 
-- made up of multiple other types
+- made up of other types
 - also called compound
 
 
