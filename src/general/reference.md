@@ -38,4 +38,12 @@
 
 
 
+## Fat pointer
+
+- reference
+- holds additional metadata for completeness
+- double the size of simple reference
+
+
+
 ## Resources

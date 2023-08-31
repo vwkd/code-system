@@ -4,22 +4,29 @@
 
 ## Introduction
 
-- dynamically-sized view into collection of contiguous sequence of elements
-- e.g. of array, of vector, of string, etc.
-- can think of view or window into collection
-- collection value can be anywhere, e.g. stack, heap, static memory
-- dynamically-sized because length of sequence unknown at compile time
-- beware: often uses "slice" as synonym for "reference to slice"!
-- immutable
-- syntax is trailing brackets containing range
+- collection type
+- single type
+- dynamically sized
+- value can be anywhere, e.g. stack, heap, static memory
+- can think of unsized array
+- reference is fat pointer
+- also holds length
+- beware: often uses "slice" as synonym for "reference to slice" ⚠️
 
-
-
-## Reference
-
-- fat pointer to value, contains address and size of value
-- points to value directly
-- still tied to existing variable
-- fixed-sized, statically-sized
-- beware: must use some sort of reference to slice to get statically-sized ❗️
 - reference to owned type can be automatically coerced to reference of slice, e.g. `&String` to `&str`
+
+
+
+## Create
+
+- can create immutable reference to slice from statically sized collection
+- syntax is leading ampersand and trailing brackets containing range
+- can think of view or window into collection
+- immutable
+- tied to existing collection
+
+
+
+## Resources
+
+- [Stack Overflow - What is the difference between a slice and reference in Rust?](https://stackoverflow.com/a/61151916/2607891)
