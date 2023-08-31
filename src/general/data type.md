@@ -44,6 +44,7 @@
 
 - stores single value
 - usually scalar
+- single value in memory
 ?? no proper term
 
 
@@ -52,24 +53,30 @@
 
 - stores multiple values
 - usually composite
+- contiguous sequence of values in memory
 
 
 
 ## Statically sized (SST)
 
 - size known at compile time
-- size is fixed
+- fixed size
+- can't grow or shrink
 - also called sized
+- can be on stack
 
 
 
 ## Dynamically sized (DST)
 
 - size only known at runtime
-- size can grow and shrink
+- dynamic size
+- can grow and shrink
+- also called unsized, not sized
 ?? has extra bit of metadata that stores size of data
 - must use behind some sort of reference
-- also called unsized
+- can usually only be on heap
+- e.g. recursive type
 
 
 
