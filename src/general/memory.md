@@ -71,6 +71,7 @@
 - memory management strategies automatic or manual
 - beware: "memory management" usually refers to management of heap!
 - beware: mismanagement is large source of memory bugs and security vulnerabilities!
+- must use behind some sort of reference
 
 #### Manual
 
