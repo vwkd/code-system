@@ -6,7 +6,7 @@
 
 - smart pointer
 - collection type
-- list of values
+- sequence of values
 - dynamic length
 - same type
 - for different types can use enum with attached values of different types

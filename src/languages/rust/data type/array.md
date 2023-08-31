@@ -7,7 +7,7 @@
 fixed-size collection of contiguous elements in memory
 
 - collection type
-- list of values
+- sequence of values
 - fixed length
 statically sized
 - same type, but for different types can use enum with attached values of different types
@@ -18,6 +18,8 @@ statically sized
 - beware: can't access elements and also mutate collection, would be two borrows where at least one is mutable, e.g. `v[0]; v.push(1);` ❗️
 
 array can be coerced into slice
+
+can index ranges
 
 
 

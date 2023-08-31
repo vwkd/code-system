@@ -7,6 +7,7 @@
 - collection type
 - single type
 - dynamically sized
+- sequence of values
 - value can be anywhere, e.g. stack, heap, static memory
 - can think of unsized array
 - reference is fat pointer
