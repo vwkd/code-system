@@ -29,10 +29,12 @@
 
 ## Smart pointer
 
-- algebraic data type that behaves like reference
-- as transparent as possible
-- has additional metadata and capabilities
+- algebraic data type that holds reference
+- holds additional metadata
+- provides additional capabilities
+- as transparent as possible, like reference
 - can think of better reference
+- e.g. growable collection type
 
 
 
