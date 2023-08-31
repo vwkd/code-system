@@ -9,6 +9,7 @@
 - can be scalar or composite
 - can be non-collection or collection
 - can be statically or dynamically sized
+- can be zero sized
 - can be algebraic
 - can be generic, associated
 
@@ -77,6 +78,14 @@
 - must use behind some sort of reference
 - can usually only be on heap
 - e.g. recursive type
+
+
+
+## Zero sized (ZST)
+
+- occupies no space
+- optimized away
+- has single unique value
 
 
 
