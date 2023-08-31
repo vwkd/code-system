@@ -11,24 +11,19 @@ index: 4
 - beware: `.chars()` gets scalar values, not grapheme clusters, one grapheme cluster might have multiple scalar values, can use external `unicode-segmentation` crate
 - multiple data types, `str`, `String`
 
+? sequence of characters
+? similar to `[char]`
+
 
 
 ## String slice
 
-? sequence of characters
-? similar to `[char]`
-? doesn't have size
-
-must put behind some sort of pointer, usually behind reference
-
 - `&str`
 - slice of string
+- dynamically sized type
 - string not necessarily on heap, can be in binary as well
-- can only use reference directly since size is not known at compile-time for stack
 - `&String` gets automatically coerced to `&str`
 reference to string can get coerced to string slice
-
-dynamically sized type
 
 
 
