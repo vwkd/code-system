@@ -20,6 +20,9 @@ function argument type should be coercion target, e.g. `&str` instead of `&Strin
 
 implements deref trait to str
 
+- `&String` gets automatically coerced to `&str`
+reference to string can get coerced to string slice
+
 - in standard library
 - automatically imported because included in prelude
 
