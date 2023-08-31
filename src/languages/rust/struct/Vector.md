@@ -4,12 +4,12 @@
 
 ## Introduction
 
-smart pointer
-
+- smart pointer
 - collection type
 - list of values
 - dynamic length
-- same type, but for different types can use enum with attached values of different types
+- same type
+- for different types can use enum with attached values of different types
 - iterable
 - beware: wants to iterate over reference, otherwise moves elements into loop variable and can't use vector afterwards ❗️
 - index can be dynamic

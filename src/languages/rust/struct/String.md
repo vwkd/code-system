@@ -8,9 +8,8 @@
 - owned string
 
 - heap-allocated growable owned
-- UTF-8 encoding
-- like `Vec<u8>` but always valid UTF-8
-? similar to `Vec<char>`
+
+- can think of `Vec<u8>` without illegal numbers
 
 ?? is already a pointer to data on the heap
 ?? every heap-allocated data type is a pointer to a value on the heap
