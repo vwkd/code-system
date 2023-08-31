@@ -7,6 +7,7 @@
 - ability to call
 - special syntax with signature of input and output types
 - implements always `FnOnce`, possibly also `Fn`, possibly also `FnMut`
+- can think of ABI for function, doesn't know exactly what it is, can call as long as respects signature
 
 
 

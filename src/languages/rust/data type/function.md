@@ -10,9 +10,8 @@ index: 6
 - can be concrete or generic
 - uses static polymorphism
 
-- anonymous unique type
+- anonymous unique zero-sized type
 - beware: can't specify concrete type, instead coerce to function pointer or closure ❗️
-- zero-sized
 - implements the Fn\* traits
 - coerces to function pointer
 - beware: don't confuse with function pointer ❗️
@@ -29,3 +28,9 @@ index: 6
 - returns unit by default implicitly if doesn't return a value
 - returns implicitly last expression if any
 - can return early with `return` statement
+
+
+
+## Resources
+
+- [Logan Smith - Rust Functions Are Weird (But Be Glad)](https://youtube.com/watch?v=SqT5YglW3qU)
