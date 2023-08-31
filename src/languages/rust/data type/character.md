@@ -5,6 +5,8 @@
 ## Introduction
 
 - scalar type
+- Unicode character
+- beware: Unicode character is not necessarily actual character, see Unicode ⚠️
 - Unicode scalar value
 - fixed size, 4 bytes
 - can think of `u32` without illegal numbers

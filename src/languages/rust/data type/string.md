@@ -1,34 +1,44 @@
----
-title: String
-index: 4
----
+# String
+
+
 
 ## Introduction
 
-- list of UTF-8 encoded bytes, variable-width encoding, character is 1-4 bytes long
-- more complicated, but more correct
-- can not be indexed, because one byte could be part of a multi-byte character
-- beware: `.chars()` gets scalar values, not grapheme clusters, one grapheme cluster might have multiple scalar values, can use external `unicode-segmentation` crate
-- multiple data types, `str`, `String`
+- sequence of Unicode scalar values
+- collection type
+- dynamically sized
+- beware: not necessarily stored on heap, see String literal ❗️
 
-? sequence of characters
-? similar to `[char]`
-
-
-
-## String slice
-
-- `&str`
 - slice of string
-- dynamically sized type
+
+- can think of slice `[u8]`
+but only valid Unicode scalar values
+but shorter actual string because some are grouped together
+but valid UTF-8
+- beware: can't index, because variable-width encoding ❗️
+
+- also called string slice
+- beware: don't confuse with owned string `String` ⚠️
+
 - string not necessarily on heap, can be in binary as well
-- `&String` gets automatically coerced to `&str`
-reference to string can get coerced to string slice
+
+- `str`
+
+
+
+## Usage
+
+- `.chars()` gets characters
+- beware: Unicode character is not necessarily actual character, see Unicode ⚠️
+- can use external `unicode-segmentation` crate to get grapheme clusters
 
 
 
 ## String literal
 
-- is string slice
-- has static lifetime
+- static lifetime
 - string stored in binary, loaded in memory of binary
+
+
+
+## Resources

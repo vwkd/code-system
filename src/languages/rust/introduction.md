@@ -14,6 +14,7 @@ index: 1
 - no exceptions, instead can use enums
 - zero-cost abstractions for high-level language features, e.g. iterators
 - union of actor and functional language, allow aliasing or mutation but not both
+- correct Unicode strings
 
 
 
