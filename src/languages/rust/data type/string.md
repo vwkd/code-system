@@ -4,8 +4,7 @@
 
 ## Introduction
 
-- slice of string
-- sequence of Unicode characters
+- slice of Unicode characters
 - beware: Unicode character is not necessarily actual character, see Unicode ⚠️
 - beware: not necessarily stored on heap, see String literal ❗️
 - uses UTF-8

@@ -5,7 +5,7 @@
 ## Introduction
 
 - collection type
-- list of values
+- sequence of values
 - fixed length
 statically sized
 - different types
