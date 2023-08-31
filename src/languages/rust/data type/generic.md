@@ -40,6 +40,9 @@ all methods on trait have no generic parameters and don't return self
 
 ?? Size of concrete type that implements trait isn't known at compile time, could be anything...
 
+- reference is fat pointer
+- also stores pointer to vtable
+
 
 
 ## Resources
