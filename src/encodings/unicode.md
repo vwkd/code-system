@@ -17,16 +17,20 @@
 
 ## Code space
 
+### Unicode character
+
+- beware: not necessarily actual character, since might be made up of multiple Unicode characters, e.g. accents, emojis, etc. ⚠️
+- beware: can have duplicates, since same actual character might be made up of different combinations of Unicode characters, e.g. diaeresis, etc. ⚠️
+- beware: can have visual duplicates, since two different actual characters might have the same glyph in a font ⚠️
+
 ### Unicode code point
 
 - natural numbers until about 1 million
+- beware: not necessarily Unicode character, since might not be assigned ⚠️
 
 ### Unicode scalar value
 
 - Unicode code point except surrogate code point
-- beware: not necessarily actual character, since USV might not yet be assigned ⚠️
-- beware: can't be every actual character, since might be more than one USV, e.g. accents, emojis, etc. ⚠️
-- beware: can have duplicates, since real character might have more than one USV ⚠️
 
 
 
