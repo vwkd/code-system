@@ -9,6 +9,7 @@ fixed-size collection of contiguous elements in memory
 - collection type
 - list of values
 - fixed length
+statically sized
 - same type, but for different types can use enum with attached values of different types
 - iterable
 - beware: wants to iterate over reference, otherwise moves elements into loop variable and can't use array afterwards ❗️
