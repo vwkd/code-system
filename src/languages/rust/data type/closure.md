@@ -9,8 +9,10 @@
 - can think of outer variables like invisible function parameters
 - more overhead than function because of closure
 - automatically implements closure traits
-- anonymous unique type
-- beware: can't specify concrete type, instead specify generic with closure trait bound, accepts any closure that satisfies it ❗️
+- anonymous unique zero-sized type
+- beware: can't specify concrete type, instead specify generic with closure trait bound, accepts any closure that satisfies it, or coerce to function pointer or closure if doesn't capture variables ❗️
+- coerces to function pointer if doesn't capture variables
+- beware: don't confuse with function pointer ❗️
 
 
 
