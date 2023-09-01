@@ -16,8 +16,11 @@
 
 ### Character
 
-- minimal unit of text with semantic value
+- smallest unit of text with semantic value
 - e.g. a letter
+- not well defined, situation-dependent, e.g. writing, selecting, deleting, etc.
+- beware: can have visual duplicates, since two different characters might have the same glyph in a font ⚠️
+- beware: can have visual differences, since same characters might have multiple glyphs in a font ⚠️
 
 ### Character set
 
@@ -28,6 +31,7 @@
 ### Code point
 
 - a natural number
+- can think of position of character in coded character set
 
 ### Code space
 
@@ -43,7 +47,7 @@
 ### Character encoding
 
 - bijective mapping between code space and sequence of bytes
-- note: might be different from coded character set mapping if doesn't map code point identical to binary byte ❗️
+- note: might be different from coded character set mapping if doesn't map code point to bytes in binary ❗️
 - also just called encoding
 
 
