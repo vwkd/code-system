@@ -8,7 +8,7 @@
 - to represent anything else like letters, numbers, symbols needs character encoding scheme
 - everything, e.g. text, file, image, is encoded, there is nothing like "plain text", must always know the encoding standard used, otherwise the bits are useless
 - seeing garbled text just means the wrong encoding was used when reading file, can decode only with proper encoding, unless if text is read using wrong encoding and then converted into another encoding, then information is lost unless exact history of conversion is known
-- must always specify encoding used, e.g. for text, input, output
+- must always specify encoding used out-of-band, can't know encoding from stream of bits itself, e.g. for text, input, output
 
 
 
@@ -38,7 +38,7 @@
 
 - character set with a bijective mapping to a code space
 - beware: lacks term for mapping ❗️
-- also called code page
+- also called code page, character map, charmap
 
 ### Character encoding
 
