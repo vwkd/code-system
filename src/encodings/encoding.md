@@ -27,7 +27,7 @@
 
 ### Character encoding
 
-- unique mapping of characters to numbers
+- unique mapping of character set to code space
 - also only called encoding
 
 ### Coded character set
@@ -36,12 +36,12 @@
 
 ### Code space
 
-- set of numbers to which a coded character set is mapped
+- set of code points to which a coded character set is mapped
 
 ### Code point
 
-- element of code space
-- i.e. a number
+- a number
+- stored in byte
 
 
 
