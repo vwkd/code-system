@@ -22,6 +22,11 @@
 - beware: can have visual duplicates, since two different characters might have the same glyph in a font ⚠️
 - beware: can have visual differences, since same characters might have multiple glyphs in a font ⚠️
 
+## Grapheme cluster
+
+- sequence of characters that often makes up _perceived character_
+- can think of best attempt to define _perceived character_
+
 ### Character set
 
 - a set of characters

@@ -5,69 +5,69 @@
 ## Introduction
 
 - universal character encoding standard
-- one big coded character set to include all and every character on earth
-- includes almost 138,000 characters as of May 2019 and grows constantly
-- no need for any encoding conversion anymore, Unicode all the things!
-- first 128 characters are same as ASCII
-- many different character encodings can encode all Unicode characters, like UTF-8, UTF-16, UTF-32
-- a character in Unicode is notated by `U+XXXX`, where `XXXX` is the code point in hexadecimal, e.g. `A` is `U+0041`
-- Unicode characters are grouped in "planes" of 2^16 (65,536) code points, there are already multiple planes, since they come one after each other and are not yet full, some characters have code points larger than 16^4 (65,536), those need more than 4 hexadecimal digits to be represented, i.e. `U+XXXXX` or `U+XXXXXX`
+- single character set, includes every character, superset of all other character sets
+- multiple character encodings
+- allows multi-lingual text
+- no need for conversion of different encodings anymore
+- Unicode all the things!
 
 
 
-## Code space
+## Coded character set
 
-### Unicode character
-
-- beware: not necessarily actual character, since might be made up of multiple Unicode characters, e.g. accents, emojis, etc. ⚠️
-- beware: can have duplicates, since same actual character might be made up of different combinations of Unicode characters, e.g. diaeresis, etc. ⚠️
-- beware: can have visual duplicates, since two different actual characters might have the same glyph in a font ⚠️
-
-### Unicode code point
-
-- natural numbers until about 1 million
-- beware: not necessarily Unicode character, since might not be assigned ⚠️
-
-### Unicode scalar value
-
-- Unicode code point except surrogate code point
+- code space until about 1 million
+- currently about 150,000 (10%) characters assigned, grows constantly
+- divided in 17 planes of fixed size 2^16 (65,536, 16^4)
+- 0th plane is Basic Multilingual Plane (BMP), contains most commonly-used characters
+- character in BMP is notated by `U+XXXX`, where `XXXX` is the code point in hexadecimal, e.g. `A` is `U+0041`
+- 1-16 higher planes are supplementary planes
+- character in supplementary planes needs more than 4 hexadecimal digits to be represented, i.e. `U+XXXXX` or `U+XXXXXX`
+- plane divided into block of no fixed size
+- beware: character not necessarily _perceived character_, since might be made up of multiple characters, e.g. accents, emoji, etc. ⚠️
+- beware: character can have duplicates, since one _perceived character_ could be made of different combinations of characters, e.g. diaeresis, etc. ⚠️
+- beware: code point not necessarily character, since might not be assigned ⚠️
+- beware: indexing code space usually doesn't make sense, since not necessarily actual character ❗️
 
 
 
-### Character encodings
+## Encodings
+
+- surrogate is a code point reserved for UTF-16
+- scalar value is a code point except a surrogate, for UTF-8 and UTF-32
 
 ### UTF-8
 
-- variable-length
-- uses 1, 2, 3 or 4 bytes (= _8_, 16, 24, 32 bits) per character
-- is the character encoding standard of the Web
-- backwards compatible with ASCII, encodes first 128 characters with same binary values like ASCII, so ASCII encoded text is valid UTF-8 encoded text, vice versa since can use UTF-8 with most old programs and languages that expect ASCII, as long as no string manipulation (operation on character-level like slicing, trimming, counting) and just simple input and output no attention needed
-
-- variable-width character encoding
-- between 1 and 4 bytes
-- can think of blind sequence of bytes, only reader groups some together, ends up with shorter sequence
+- de facto standard
+- backwards compatible with ASCII, ASCII characters have identical binary value, ASCII encoded text is valid UTF-8 encoded text
+- variable-width
+- 1, 2, 3 or 4 bytes
+- byte of single-byte code point doesn't have high bit set, ASCII
+- bytes of multibyte code point have high bit set, non-ASCII
+- first byte of multibyte code point starts with as many `1`s as number of bytes
+- following bytes of multibyte code point each start with `10`
+- no bytes of code point is subslice of bytes of other code point
+- no subslice of bytes of multibyte code point is valid bytes of code point
+- knows if between code points or in middle of code point, e.g. if encoded text is cut off
+- can think of blind sequence of single bytes, only reader groups some together and ends up with shorter sequence of characters
 - advantage needs less space
-- drawback can't index directly, needs to read from start, linear time
+- drawback can't index by code point, needs to read from start, linear time
 
 ### UTF-16
 
-- variable-length
-- uses 2 or 4 bytes (= _16_ or 32 bits) per character
-
-- like UTF-8, but
-- between 2 and 4 bytes
+- variable-width
+- 2 or 4 bytes
+- "worst of both worlds"
 
 ### UTF-32
 
-- fixed-length
-- uses 4 bytes (= _32_ bits) per character
-- even for most simple characters wastes 4 bytes
-
-- advantage can index directly, constant time
-- drawback needs more space
+- fixed-width
+- 4 bytes
+- advantage can index by code point, constant time
+- drawback needs more space, wastes 4 bytes for every character
 
 
 
 ## Resources
 
 - [Wikipedia - Variable-width encoding](https://en.m.wikipedia.org/wiki/Variable-width_encoding)
+- [Manish Goregaokar - Let's Stop Ascribing Meaning to Code Points](https://manishearth.github.io/blog/2017/01/14/stop-ascribing-meaning-to-unicode-code-points/)
