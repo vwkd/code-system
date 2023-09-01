@@ -6,6 +6,7 @@
 
 - smart pointer
 - owned string
+- beware: `Vec<char>` is usually larger than equivalent `String` of same characters, since UTF-32 instead of UTF-8 ❗️
 
 - heap-allocated growable owned
 
