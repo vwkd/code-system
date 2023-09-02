@@ -20,6 +20,7 @@
 - syntax is leading ampersand and trailing brackets containing range
 - can think of view or window into collection
 - tied to existing collection
+- clone is expensive, linear time
 
 
 
