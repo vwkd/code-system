@@ -4,15 +4,36 @@
 
 ## Introduction
 
-- slice of Unicode characters
+- scalar collection type
+- variable-length sequence of Unicode characters
 - beware: Unicode character is not necessarily actual character, see Unicode ⚠️
-- beware: not necessarily stored on heap, see String literal ❗️
 - stored as UTF-8
 - can think of slice `[u8]` without illegal numbers
+- dynamically sized
+- part of existing string value in memory, doesn't exist by itself
+- can't create, only coerce from existing string, must be statically sized
+- beware: existing string value can be anywhere, e.g. heap, static memory ❗️
+- can think of view into existing string
 - beware: `[char]` is usually larger than equivalent `str` of same characters, since UTF-32 instead of UTF-8 ❗️
 - also called string slice
+- beware: often uses "string slice" as synonym for "reference to string slice" ⚠️
 - beware: don't confuse with owned string `String` ⚠️
+- clone is expensive, linear time
 - `str`
+
+
+
+## Reference
+
+- fat pointer, also holds length
+- syntax is leading ampersand and trailing brackets containing range
+
+
+
+## Literal
+
+- reference with static lifetime
+- existing string value in static memory
 
 
 
@@ -24,13 +45,6 @@
 - `char_indices()` gets characters and indices
 - beware: Unicode character is not necessarily actual character, see Unicode ⚠️
 - can use external `unicode-segmentation` crate to get grapheme clusters
-
-
-
-## Literal
-
-- stored in binary, loaded in memory of binary
-- has static lifetime
 
 
 
