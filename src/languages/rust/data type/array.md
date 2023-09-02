@@ -4,22 +4,23 @@
 
 ## Introduction
 
-fixed-size collection of contiguous elements in memory
+- composite collection type
+- fixed-length sequence of values of single type
+- statically sized
+- for different types can wrap in enum with attached values
 
-- collection type
-- sequence of values
-- fixed length
-statically sized
-- same type, but for different types can use enum with attached values of different types
+
+
+## Usage
+
 - iterable
-- beware: wants to iterate over reference, otherwise moves elements into loop variable and can't use array afterwards ❗️
+- beware: usually wants to iterate over reference, otherwise moves elements into loop variable and can't use array afterwards ❗️
+- index can be range
 - index can be dynamic
-- beware: direct index copies element, must use reference for heap-allocated data type since move is not possible ❗️
-- beware: can't access elements and also mutate collection, would be two borrows where at least one is mutable, e.g. `v[0]; v.push(1);` ❗️
-
-array can be coerced into slice
-
-can index ranges
+- beware: direct index copies element, instead can get reference using `get` method ❗️
+- beware: must use reference for heap-allocated data type since move is not possible ❗️
+- beware: can't access and also mutate elements, would be two borrows where at least one is mutable, e.g. `arr[0]; arr[1] = 1;` ❗️
+- coerces into slice
 
 
 
