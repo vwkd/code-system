@@ -39,6 +39,48 @@ Box<str> is essentially immutable String, no allocation, also no capacity
 cloning Box<str> would make deep clone, memory allocation, linear time copy
 BUT always prefer to use references to slice first, if doesn't need ownership
 
+String is to str, what Vec<T> is to [T]
+always use &str instead of &String
+
+string data is character buffer on heap
+over-allocates a bit
+
+string struct stores pointer to string data, length and capacity
+
+clone allocates new memory, copies over characters
+linear time
+no extra capacity
+crates new struct and points at new character buffer
+
+Arc<str>
+heap data is strong rc, weak rc, and string data
+
+arc struct is pointer to heap data and length, no capacity
+if type is Sized then only pointer, no length
+
+clone just increments rc and copies struct, doesn't clone heap data / memory allocation / deep copy
+
+also implements `Deref<str>` like `String`
+-> can replace String if doesn't need mutation
+
+String for modifying collection
+don't use if doesn't modify
+in other words: immutable String doesn't make sense !
+
+Shared-ownership immutable string
+unlikely benefits, only when
+ do tons and tons of copy of long permanent text, and
+ can't attach a string ownership with anything else in the same scope at all
+
+[a]rc a clone is always O(1), while for a slice it's O(n)
+
+--> in short: use Arc for shared ownership instead of cloning Vec, but if references won't do
+
+ABOVE BAD
+get a pointer to the same exact slice
+like taking an immutable reference to a Vec, which is faster
+ does not fulfil the same role as a Vec clone
+
 
 
 ## Resources
