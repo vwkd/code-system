@@ -20,5 +20,22 @@ can convert to reference with `as_ref` method
 always use &T instead of &Box<T>
 
 
+## Storage
+
+stores heap data
+is struct with pointer to heap data and length
+if type is Sized then only pointer, no length
+even more efficient than Arc
+but clone would deep copy
+can think of immutable Vec<T> without capacity
+
+
+
+or even better Box<str> if doesn't need to clone
+Box<str> is essentially immutable String, no allocation, also no capacity
+cloning Box<str> would make deep clone, memory allocation, linear time copy
+BUT always prefer to use references to slice first, if doesn't need ownership
+
+
 
 ## Resources
