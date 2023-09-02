@@ -9,8 +9,8 @@
 - points to value
 - can think of a pointing finger, a physical address, a page number in a book, a hypherlink, etc.
 - can think of value of another value
-- other value can be anything, can be on stack or heap
-- itself stored on stack
+- value always on stack
+- beware: never on heap, don't confuse with value of Smart pointer, see Smart pointer ⚠️
 - can dereference
 - allows more performance, doesn't copy memory
 - can have pointers to pointers
@@ -29,12 +29,10 @@
 
 ## Smart pointer
 
-- algebraic data type that holds reference
-- holds additional metadata
-- provides additional capabilities
-- as transparent as possible, like reference
-- can think of better reference
-- e.g. growable collection type
+- algebraic data type holding internal pointer to value
+- usually value is on heap, de-/allocates internally
+- can use like reference, transparent
+- beware: often "looks through", refers to type of value, e.g. "this variable is on the heap", etc. ⚠️
 
 
 

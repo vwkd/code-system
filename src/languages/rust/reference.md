@@ -239,3 +239,12 @@ beware: `*` isn't dereference operator
 - best practice to accept closure to be most general
 - syntax is lowercase `fn`
 - also called function signature, in contrast to specific unique anonymous function type
+
+
+
+## Smart pointer
+
+- owns value, dropped automatically when itself is dropped
+- beware: only thinks of it when shared ownership ❗️
+- implements `Deref` trait
+- statically sized
