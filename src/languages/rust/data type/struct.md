@@ -22,6 +22,9 @@ index: 5
 
 ## Declaration
 
+?? can have one DST in last field
+?? beware: not multiple ❗️
+
 - can have methods in separate `impl` block
 - can have multiple `impl` blocks
 - by default is associated function on struct type
