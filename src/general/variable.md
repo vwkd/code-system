@@ -5,7 +5,8 @@
 ## Introduction
 
 - name of a value
-- value can be on stack or on heap
+- value always on stack
+- beware: never on heap, don't confuse with value of Smart pointer, see Reference#Smart pointer ⚠️
 - stored itself on stack
 - identifier is bound to memory address of value
 - allows to read and write value
