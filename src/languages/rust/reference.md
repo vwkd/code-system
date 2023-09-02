@@ -246,7 +246,9 @@ beware: `*` isn't dereference operator
 
 - owns value, dropped automatically when itself is dropped
 - beware: only thinks of it when shared ownership ❗️
-- implements `Deref` trait
 - statically sized
--  reference is pointer to pointer
+- reference is pointer to pointer
 - best practice to use coercion target, avoids extra layer of indirection
+- usually implements `Deref` trait
+- usually doesn't implement `Copy` trait, since copying data on heap is expensive
+- usually implements `Clone` trait
