@@ -248,3 +248,5 @@ beware: `*` isn't dereference operator
 - beware: only thinks of it when shared ownership ❗️
 - implements `Deref` trait
 - statically sized
+-  reference is pointer to pointer
+- best practice to use coercion target, avoids extra layer of indirection
