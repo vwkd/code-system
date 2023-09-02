@@ -8,19 +8,20 @@
 - variable-length sequence of values of single type
 - can think of unsized array
 - dynamically sized
+- part of existing collection value in memory, doesn't exist by itself
+- can't create, only coerce from existing collection, must be statically sized
+- beware: existing collection value can be anywhere, e.g. stack, heap, static memory ❗️
+- can think of view into existing collection
 - beware: often uses "slice" as synonym for "reference to slice" ⚠️
 - clone is expensive, linear time
+- `[T]`
 
 
 
 ## Reference
 
 - fat pointer, also holds length
-- can create from statically sized collection
-- beware: collection value can be anywhere, e.g. stack, heap, static memory ❗️
 - syntax is leading ampersand and trailing brackets containing range
-- can think of view or window into collection
-- tied to existing collection
 
 
 
