@@ -61,23 +61,19 @@
 ## Statically sized (SST)
 
 - size known at compile time
-- fixed size
-- can't grow or shrink
 - also called sized
-- can be on stack
+- beware: don't confuse with fixed or dynamic size, if can grow or shrink ❗️
 
 
 
 ## Dynamically sized (DST)
 
 - size only known at runtime
-- dynamic size
-- can grow and shrink
 - also called unsized, not sized
-?? has extra bit of metadata that stores size of data
 - must use behind some sort of reference
-- can usually only be on heap
+?? has extra bit of metadata that stores size of data
 - e.g. recursive type
+- beware: don't confuse with fixed or dynamic size, if can grow or shrink ❗️
 
 
 
