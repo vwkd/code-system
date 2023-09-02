@@ -18,6 +18,14 @@ unwrap method to panic at runtime, can use during development or when case never
 
 ? has map method that maps some of some otherwise just back to none
 
+never use &Option<T>, always Option<&T>
+
+can convert to Result with `ok_or(())`
+
+special case of Result, only one self-explanatory reason of saying missing value
+
 
 
 ## Resources
+
+- [Logan Smith - Code the Right Option](https://youtube.com/watch?v=6c7pZYP_iIE)
