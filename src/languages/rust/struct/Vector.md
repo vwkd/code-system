@@ -4,6 +4,8 @@
 
 ## Introduction
 
+can think of dynamic array
+
 - smart pointer
 - collection type
 - sequence of values
@@ -18,11 +20,47 @@
 
 reference to vector of Type can be coerced to reference to slice of Type ??? Or only of trait objects
 
+implements `Deref<[T]>`
+
 - in standard library
 - automatically imported because included in prelude
 
 ?? takes ownership of its elements
 
+always use &[T] instead of &Vec<T>
+
+doubles it's current capacity each time that allocates
+exponential
+
+don't call `reserve_exact()` in a loop, thwarts exponential growth to linear growth
+instead use `reserve()`, maintains exponential growth
+or use `extend()` which preallocates under the hood
+
+use Arc<[T]> over Vec<T> for sequence of data that's never mutated and cloned around often
+use Rc if doesn't need multi-thread safety
+use Box if never clones
+e.g. hash map keys, etc.
+
+Arc
+has cheap constant time clone
+doesn't need capacity field since can't mutate
+also implements `Deref<[T]>` like `Vec<T>`
+-> can replace Vec<T> if doesn't need mutation
+
+Vec for modifying collection
+don't use if doesn't modify
+in other words: immutable Vec doesn't make sense !
+
+if doesn't need to clone use Box<T>
+stores heap data
+is struct with pointer to heap data and length
+if type is Sized then only pointer, no length
+even more efficient than Arc
+but clone would deep copy
+can think of immutable Vec<T> without capacity
+
+but use reference when doesn't need to give ownership
+if there's an obvious owner that outlives the rest
 
 
 ## Construction
@@ -47,3 +85,6 @@ reference to vector of Type can be coerced to reference to slice of Type ??? Or 
 
 
 ## Resources
+
+[Logan Smith - Use Arc Instead of Vec](https://youtube.com/watch?v=A4cKi7PTJSs)
+[Logan Smith - The Dark Side of .reserve()](https://youtube.com/watch?v=algDLvbl1YY)
