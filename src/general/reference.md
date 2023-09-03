@@ -17,6 +17,10 @@
 - potential problems since underlying data can change underneath
 - also called pointer, sometimes means concrete implementation
 
+- can think of access to someone else's memory, not your own memory
+- can think of visiting someone else's house
+- with their permission, you can visit, you can even change stuff, but you need to leave again
+
 
 
 ## Dereferencing

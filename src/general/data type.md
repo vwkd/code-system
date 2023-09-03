@@ -118,6 +118,7 @@
 - abstract data type
 - represents multiple concrete data types
 - enables polymorphism
+- also called type parameter
 
 
 
