@@ -15,6 +15,8 @@ index: ??
 
 matching and binding against the structure of a type
 
+note: doesn't need to be enum, can match values of any type like struct
+
 
 
 ## `match`
