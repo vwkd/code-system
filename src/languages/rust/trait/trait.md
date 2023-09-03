@@ -29,6 +29,8 @@ default trait methods can't return Self by value or take it as a parameter by va
 needs either to specify that Self must be sized by default `trait MyTrait: Sized { ... }`
 or that a method can only be called if Self is sized
 
+most operators are implemented through traits
+
 
 
 ## Declaration

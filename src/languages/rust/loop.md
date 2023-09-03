@@ -27,6 +27,19 @@ irrefutable pattern
 - loops until iterator returns `None`
 - can think of `while let Some(myvalue) = myiterator.next() { ... }`
 
+```rs
+let result = match IntoIterator::into_iter(numbers) {
+  mut iter => loop {
+    let next;
+    match iter.next() {
+      Some(val) => next = val,
+      None => break,
+    };
+    // ...
+  },
+};
+```
+
 
 
 ## while loop
