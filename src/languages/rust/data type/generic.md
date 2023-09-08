@@ -43,6 +43,16 @@ all methods on trait have no generic parameters and don't return self
 - reference is fat pointer
 - also stores pointer to vtable
 
+contains two pointers
+One pointer goes to the data
+one to vtable
+
+virtual method table
+map of method call names to function pointers
+also called vtable
+
+- beware: often uses "trait object" as synonym for "reference / smart pointer to trait object" ⚠️
+
 
 
 ## Resources

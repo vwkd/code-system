@@ -38,6 +38,9 @@
 - can use like reference, transparent
 - beware: often "looks through", refers to type of value, e.g. "this variable is on the heap", etc. ⚠️
 
+can think of reference, "look through" as if were transparent
+Though also doubles as construct to create the owned value
+
 
 
 ## Fat pointer
