@@ -42,6 +42,8 @@ mutable, dynamic length, can grow
 collection data is item buffer on heap
 over-allocates a bit
 
+vec! macro doesn't overallocate
+
  struct stores pointer to collection data, length and capacity
 
 clone allocates new memory, copies over items
@@ -67,8 +69,13 @@ guarantees O(1) amortized push
 
 best practice to specify capacity in advance if knows, with `with_capacity` constructor
 
-If len == capacity, (as is the case for the vec! macro), then a Vec<T> can be converted to and from a Box<[T]> without reallocating or moving the elements
-??? how
+ can convert Vec<T> to Box<[T]> with Vec::into_boxed_slice
+ doesn't reallocate or move the elements
+ shrinks capacity equal to length
+ also with Box::from but doesn't shrink capacity, hence reallocates if capacity not equal to length
+ 
+ can convert Box<[T]> to Vec<T> with Vec::from
+  shrinks capacity equal to length
 
 beware: don't call `reserve_exact()` in a loop, thwarts exponential growth to linear growth
 instead use `reserve()`, maintains exponential growth
