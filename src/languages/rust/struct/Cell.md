@@ -4,19 +4,18 @@
 
 ## Introduction
 
-- interior mutability
-
-moves values in and out of the cell
-an &mut T to the inner value can never be obtained
-the value itself cannot be directly obtained without replacing it with something else
-i.e. never more than one reference pointing to the inner value
-
-
-typically used for more simple types where copying or moving values isn’t too resource intensive (e.g. numbers)
-should usually be preferred over other cell types when possible
-For larger and non-copy types, RefCell provides some advantages.
-
-- beware: allows to mutate through immutable reference ❗️
+- smart pointer
+- allows interior mutability
+- can mutate value using `set()` method
+- can get copy of value using `get()` method if value implements `Copy`
+- can't get reference to contained value
+- never has multiple references to contained value
+- doesn't check borrowing rules dynamically at runtime
+- beware: prefer over `RefCell` where possible ❗️
+- only single ownership over value, like `Box`
+- only single-threaded, not `Sync`
+- beware: doesn't implement `Sync`, loses ability to share across threads ❗️ 
+- for multiple threads see `RwLock` and `Mutex`
 
 
 
