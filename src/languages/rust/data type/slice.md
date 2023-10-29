@@ -15,13 +15,14 @@
 - beware: often uses "slice" as synonym for "reference to slice" ⚠️
 - clone is expensive, linear time
 - `[T]`
+- syntax is trailing brackets containing range or `as_ref()` method
+- beware: use array indexing to prevent temporary value from being dropped early ❗️
 
 
 
 ## Reference
 
 - fat pointer, also holds length
-- syntax is leading ampersand and trailing brackets containing range
 
 
 

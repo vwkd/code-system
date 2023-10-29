@@ -20,13 +20,14 @@
 - beware: don't confuse with owned string `String` ⚠️
 - clone is expensive, linear time
 - `str`
+- syntax is trailing brackets containing range or `as_ref()` method
+- beware: use array indexing to prevent temporary value from being dropped early ❗️
 
 
 
 ## Reference
 
 - fat pointer, also holds length
-- syntax is leading ampersand and trailing brackets containing range
 
 
 
