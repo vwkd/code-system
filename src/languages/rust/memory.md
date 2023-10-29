@@ -95,6 +95,11 @@ Can instead call `drop` function from std library
 included in prelude, no need to bring it into scope
 is empty function that simply takes ownership such that drops at end
 
+temporary value is dropped as early as possible, lifetime is innermost enclosing statement instead of enclosing block
+can extend lifetime to enclosing block by can assign to variable, can use variable shadowing to avoid polluting the namespace with extra identifier
+array indexing containing range `foo[..]` also extends lifetime to enclosing block, allows to create slice
+beware: doesn't work for wrapped types like `Result` or `Option` ❗️
+
 
 
 ## Unsafe
