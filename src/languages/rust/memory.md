@@ -31,22 +31,6 @@ can use shared pointer for shared ownership???
 
 
 
-
-## Interior Mutability
-??? misleading name referring to implementation (declaration of variable)
-
-pattern that allows to mutate value even while immutable references exists
-usually disallowed by borrowing rules
-
-for certain memory safe scenarios
-more expanded borrowing rules
-but can't verify statically
-
-checks expanded borrowing rules dynamically at runtime
-not statically at compile time
-
-
-
 ## Derivation
 
 ### Type with `Copy` trait

@@ -1,8 +1,10 @@
+# Mutex
 
 
 
-shared mutability in a multi-threaded situation.
+## Introduction
 
-aliasing and mutation among multiple threads
+- smart pointer
+- allows interior mutability
+- like `RwLock`, but only one lock, always mutable, can have only single reader
 
-can use with Arc for shared ownership and mutability

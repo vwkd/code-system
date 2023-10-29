@@ -55,24 +55,9 @@ strong pointer??: owns value
 
 ?? fat pointer, pointer to start and length ?? Or only for slice
 
-
-
-## Mutability
-
-### Inherited
-
 - mutability only through mutable reference
-- can mutate value only if declared mutable
-- prefer when possible
-
-### Interior
-
-- mutability through immutable reference
-- uses immutable type that mutates interior value through methods
-- beware: can mutate value even if declared immutable ❗️
-- last resort
-- used to mutate inside of immutable type, e.g. `Rc`, `Arc`, etc.
-- used to mutate through `clone` method
+- disallows certain memory-safe scenarios that can't be checked at compile time
+- can circumvent using Interior Mutability
 
 
 
@@ -252,3 +237,19 @@ beware: `*` isn't dereference operator
 - usually implements `Deref` trait
 - usually doesn't implement `Copy` trait, since copying data on heap is expensive
 - usually implements `Clone` trait
+
+
+
+## Interior Mutability
+
+- mutatability through immutable reference
+- uses wrapping smart pointer that offers methods to read and mutate underlying value
+- allows shared mutability
+- beware: prefer inherited mutability through direct references, use only if necessary ❗️
+
+
+
+## Resources
+
+- [Ricardo Martins - Interior mutability in Rust: what, why, how?](https://ricardomartins.cc/2016/06/08/interior-mutability)
+- [Code to the Moon - Rust Interior Mutability - Sneaking By The Borrow Checker](https://youtube.com/watch?v=HwupNf9iCJk)
