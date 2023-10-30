@@ -93,11 +93,14 @@ e.g. can dereference smart pointer only to a single other type
 
 ## Supertrait
 
-- trait that a trait requires being also implemented
-- type that implements trait must also implement supertrait
-- allows to depend on other traits
-- can specify multiple
+- other trait that trait requires to also implement
+- allows dependencies on other traits
 - syntax is like trait bound on name, multiple separated by plus
+- can automatically implement trait if all supertraits are implemented
+
+```rs
+impl<T: SuperTrait1 + SuperTrait2> MyTrait for T {}
+```
 
 
 
