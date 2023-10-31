@@ -41,18 +41,23 @@ all methods on trait have no generic parameters and don't return self
 ?? Size of concrete type that implements trait isn't known at compile time, could be anything...
 
 - reference is fat pointer
-- also stores pointer to vtable
-
-contains two pointers
-One pointer goes to the data
-one to vtable
+- contains two pointers, to data and also to vtable
 
 virtual method table
+table of function pointers
 map of method call names to function pointers
 also called vtable
+?? has pointers to all functions that struct?? implements
+in static memory
+generated at compile time
+
+performance penalty
+two pointer dereferences
 
 - beware: often uses "trait object" as synonym for "reference / smart pointer to trait object" ⚠️
 
 
 
 ## Resources
+
+- [Logan Smith - Two Ways To Do Dynamic Dispatch](https://youtube.com/watch?v=wU8hQvU8aKM)
