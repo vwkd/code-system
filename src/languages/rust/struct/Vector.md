@@ -35,7 +35,7 @@ use Arc if needs multi-thread safety
 - struct holds pointer to value, length and capacity
 - doubles capacity each time that allocates, over-allocates
 - exponential growth
-- allocation on average constant time, since pays off over following insertions
+- allocation on average constant time, since pays off over following insertions, amortization
 
 mutable, dynamic length, can grow
 
@@ -81,6 +81,9 @@ beware: don't call `reserve_exact()` in a loop, thwarts exponential growth to li
 instead use `reserve()`, maintains exponential growth
 or use `extend()` which preallocates under the hood
 
+- contiguous sequence of values in memory
+dereferences into slice
+// todo: same for String and str
 
 
 ## Construction

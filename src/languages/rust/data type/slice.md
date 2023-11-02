@@ -18,6 +18,8 @@
 - syntax is trailing brackets containing range or `as_ref()` method
 - beware: use array indexing to prevent temporary value from being dropped early ❗️
 
+- contiguous sequence of values in memory
+
 
 
 ## Reference
