@@ -54,7 +54,7 @@
 
 - stores multiple values
 - usually composite
-- contiguous sequence of values in memory
+- beware: not necessarily contiguous sequence of values in memory ❗️
 
 
 
