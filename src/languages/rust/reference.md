@@ -246,6 +246,7 @@ beware: `*` isn't dereference operator
 - uses wrapping smart pointer that offers methods to read and mutate underlying value
 - allows shared mutability
 - beware: prefer inherited mutability through direct references, use only if necessary ❗️
+can think of mutable memory location behind immutable pointer
 
 
 
