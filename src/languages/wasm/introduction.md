@@ -39,6 +39,7 @@ Portable: makes no architectural assumptions that are not broadly supported acro
 code is also easy to inspect and debug
 
 - virtual instruction set architecture (ISA)
+maps mostly 1:1 to hardware instructions
 - encodes a low-level, assembly-like programming language
 
 
