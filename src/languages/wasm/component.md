@@ -30,6 +30,9 @@ like OS's process model (defining how processes start up and communicate with ea
 
 format to describe the imports and exports to a component
 
+`.wit` file can contain multiple worlds
+beware: single `.wit` file doesn't necessarily correspond to single component!
+
 ### Package
 
 basis of sharing types and definitions in an ecosystem of components
@@ -68,10 +71,14 @@ i.e. types can further be used from the interface by other interfaces
 has a single namespace
 i.e.none of the defined names can collide
 
+?? can think of as instance type
+
 ### World
 
 complete description of both imports and exports of a component
 can think of as component type
+better name would have been "interface"
+can have multiple interfaces
 
 describe a concrete component
 are the basis of bindings generation
