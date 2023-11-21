@@ -4,31 +4,16 @@
 
 ## Introduction
 
+- standard for composition of Wasm modules
+- enables capability-based, virtualizable interfaces
 
-broad-reaching architecture for building interoperable Wasm libraries, applications, and environments
-
-
-
-portable, load- and run-time-efficient binary format for separately-compiled components built from WebAssembly core modules that enable portable, cross-language composition.
-
-Support the definition of portable, virtualizable, statically-analyzable, capability-safe, language-agnostic interfaces, especially those being defined by [WASI].
-
-
-
-defines
-grammar of types that can be used in WASI interfaces;
-linking functionality that WASI can assume is used to compose separate modules of code, isolate their capabilities and virtualize WASI interfaces;
-core wasm ABI that core wasm toolchains can compile against when targeting WASI.
-
-
-like OS's process model (defining how processes start up and communicate with each other)
 
 
 ## Wasm Interface Type (WIT)
 
 - IDL for Component Model
 
-format to describe the imports and exports to a component
+describe the imports and exports to a component
 
 `.wit` file can contain multiple worlds
 beware: single `.wit` file doesn't necessarily correspond to single component!
