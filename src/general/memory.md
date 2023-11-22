@@ -97,6 +97,27 @@
 
 
 
+## Endianness
+
+- order of bytes in multi-byte value
+- e.g. in memory, in communication channel, etc.
+- beware: nothing to do with physical layout ❗️
+- beware: in examples often implicitly assumes positions grow left-to-right like text, low is left, high is right ❗️
+
+### Big
+
+- most significant byte at lowest position, least significant byte at highest
+- dominant in network protocols, e.g. IP
+- "big first"
+
+### Little
+
+- least significant byte at lowest position, most significant byte at highest
+- dominant in processor architectures, e.g. x86, ARM, RISC-V
+- "little first"
+
+
+
 ## Resources
 
 - [Let's Get Rusty - Stack, Heap, and Static Memory](https://youtube.com/watch?v=NnLdGKoz1ls)
