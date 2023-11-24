@@ -1,67 +1,45 @@
-# Component Model
+# Component
 
 
 
 ## Introduction
 
-- standard for composition of Wasm modules
-- enables capability-based, virtualizable interfaces
+- composable Wasm module
+- enables capability-based, virtualizable interface
 
 
 
-## Wasm Interface Type (WIT)
+## Wasm Interface Type (WIT) format
 
-- IDL for Component Model
-
-describe the imports and exports to a component
-
-`.wit` file can contain multiple worlds
-beware: single `.wit` file doesn't necessarily correspond to single component!
-
-### Package
-
-- set of interfaces and worlds
-- defined in files in the same directory that all use the file extension `wit`
-
-basis of sharing types and definitions in an ecosystem of components
-
-Types can be imported between interfaces within a package and additionally from other packages through IDs.
-
-A "package" groups together a set of interfaces and worlds that would otherwise be named with a common prefix.
-
-can be defined in a collection of files and at least one of them must specify a package name. Multiple files can specify a package and they must all agree on what the package name is.
-
-can contain any number of interfaces listed at the top-level and in any order
-all references between interfaces must be well-formed and acyclic
-
-can contain world definitions at the top-level in addition to interface definitions.
-
-group definitions, don't represent behaviour
-
-- has id of namespace, name and optional semver version
-id at the top of a WIT file via a package declaration
-used to generate the names of imports and exports of interfaces and worlds
+- IDL
+- naming is kebab-case, ASCII-only
+- written in `.wit` files
+- beware: single `.wit` file doesn't necessarily correspond to single component ❗️
 
 ### Interface
 
 - set of types and functions
-- can think of as instance type
+- can think of instance type
 - can think of unit of functionality
-- can contain use statements, type definitions, and function definitions
+- can import types and functions from other interfaces
 - has single namespace, defined names must not collide
 
 ### World
 
 - set of imports and exports
-- can think of as component type
+- can think of component type
 - can contain functions and interfaces
 - can think of set of functionalities
+- can import and export same foreign interface by ID, but not local interface
 
-plain name of import or export statement becomes plain name of final component import or export definition
+### Package
 
-Kebab names cannot overlap and must be unique, even between imports and exports.
-IDs, however, can be both imported and exported.
-same interface cannot be explicitly imported or exported twice.
+- set of interfaces and worlds
+- `.wit` files in the same directory
+- order of interfaces and worlds in `.wit` files doesn't matter
+- has id from namespace, name and optional semver version
+- id `namespace:name@version` at top of at least one `.wit` file
+- can't have cyclical references between interfaces
 
 
 
