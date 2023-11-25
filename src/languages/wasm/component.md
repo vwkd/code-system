@@ -4,7 +4,9 @@
 
 ## Introduction
 
-- composable Wasm module
+- composable module
+- builds on top of core module
+- can't export memory unlike core module
 - enables capability-based, virtualizable interface
 
 
@@ -26,11 +28,10 @@
 
 ### World
 
-- set of imports and exports
+- set of interfaces and functions that imports and exports
 - can think of component type
-- can contain functions and interfaces
 - can think of set of functionalities
-- can import and export same foreign interface by ID, but not local interface
+- can both import and export same interface if foreign, but not own
 
 ### Package
 
@@ -47,3 +48,4 @@
 
 - [Component Model design and specification](https://github.com/WebAssembly/component-model/tree/d1f47566f7aa9c8ab7bae2826eb9d123b2196512)
 - [The `wit` format](https://github.com/WebAssembly/component-model/blob/d1f47566f7aa9c8ab7bae2826eb9d123b2196512/design/mvp/WIT.md)
+- [The WebAssembly Component Model](https://component-model.bytecodealliance.org/)
