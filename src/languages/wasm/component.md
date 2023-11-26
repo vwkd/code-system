@@ -6,7 +6,8 @@
 
 - composable module
 - builds on top of core module
-- can't export memory unlike core module
+- has standardised ABI
+- beware: can't export memory unlike core module ❗️
 - enables capability-based, virtualizable interface
 
 
@@ -30,7 +31,8 @@
 
 ### World
 
-- set of interfaces and functions that imports and exports
+- set of interfaces that imports and exports
+- ? can also import/export inline functions, but can't compose with other components, only use with host
 - can think of component type
 - can think of set of functionalities
 - can both import and export same interface only if foreign, using `package/interface`
@@ -38,7 +40,7 @@
 
 ### Package
 
-- set of interfaces and worlds
+- set of worlds and interfaces
 - `.wit` files in the same directory
 - order of interfaces and worlds in `.wit` files doesn't matter
 - has id from namespace, name and optional semver version
