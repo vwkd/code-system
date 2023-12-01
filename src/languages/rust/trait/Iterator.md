@@ -85,3 +85,5 @@
 
 
 ## Resources
+
+- [Jon Gjengset - Crust of Rust: Iterators](https://youtube.com/watch?v=yozQ9C69pNs)

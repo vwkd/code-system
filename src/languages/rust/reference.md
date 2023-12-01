@@ -252,5 +252,6 @@ can think of mutable memory location behind immutable pointer
 
 ## Resources
 
+- [Jon Gjengset - Crust of Rust: Lifetime Annotations](https://youtube.com/watch?v=rAl-9HwD858)
 - [Ricardo Martins - Interior mutability in Rust: what, why, how?](https://ricardomartins.cc/2016/06/08/interior-mutability)
 - [Code to the Moon - Rust Interior Mutability - Sneaking By The Borrow Checker](https://youtube.com/watch?v=HwupNf9iCJk)
