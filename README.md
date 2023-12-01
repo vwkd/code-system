@@ -1,3 +1,4 @@
-# Notes For System Developers
+# README
 
-My personal collection of notes about System Development.
+Notes about systems development
+
