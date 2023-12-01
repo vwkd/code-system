@@ -11,30 +11,41 @@
 
 ## Declarative
 
+- maps input patterns to expression
+- can think of substitution
 - matches pattern against single token tree
-- maps input patterns to match arms
 - beware: different pattern syntax than in match expression ❗️
 - can accept variable number of arguments
 - can pass different types as arguments
 - also called macro by example
 - most widely used form
+- input must be valid syntax
+- beware: unlike procedural, which can define arbitrary syntax ❗️
 
 ### Declaration
 
+- using `macro_rules!` macro
+- match arms like `match` statements
+- use block to contain statements
+- has separate scope for identifiers
+- doesn't leak identifiers into caller's scope
+- needs to pass identifiers of caller's scope as argument to access it
+- beware: don't confuse with function call, doesn't pass value but access to identifier ❗️
 - can contain other macros
-- variables and identifiers are scoped to macro
-- doesn't leak into surrounding scope
+- annotate with `#[macro_export]` to make public
 
 ### Usage
 
 - calls with exclamation mark and grouping tokens
 - e.g. parentheses, brackets, curly brackets, etc.
+- beware: can't restrict to specific grouping tokens, e.g. only square brackets ❗️
 
 
 
 ## Procedural
 
-- function with token stream input and token stream output
+- maps input token stream to output token stream
+- can think of program
 - currently must be defined in own crate with special crate type
 
 ### function-like
@@ -58,3 +69,9 @@
 ## Println
 
 ?? takes argument by reference even if not specified? `println!("{}", foo.bar)`
+
+
+
+## Resources
+
+- [Jon Gjengset - Crust of Rust: Declarative Macros](https://youtube.com/watch?v=q6paRBbLgNw)
