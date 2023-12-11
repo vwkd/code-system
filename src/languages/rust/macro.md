@@ -40,6 +40,8 @@
 - can use repetition for a pattern in body
 - can use multiple repeating patterns only if repeat same number of times
 - beware: can't use multiple patterns that repeat different amount of times because ambiguous ❗️
+- beware: use expression input only once, otherwise if first evaluation mutates underlying data then second evaluation fails to compile, instead can assign to local variable once and reuse that multiple times ❗️
+- compile error in body is propagated to input, i,e, can't specify input type like in function, just uses it and let error
 
 ### Usage
 
