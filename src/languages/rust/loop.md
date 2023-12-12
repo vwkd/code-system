@@ -19,23 +19,33 @@ index: ???
 - loop through collection
 irrefutable pattern
 
-- just sugar for iteration
-- plain identifier uses `.into_iter()`
-- beware: default is to consume collection ❗️
-- `&` identifier uses `.iter()`
-- `&mut` identifier uses `.iter_mut()`
+- just sugar for iteration using `.into_iter()`
+- iterable can be owned, reference or mutable reference type
 - loops until iterator returns `None`
-- can think of `while let Some(myvalue) = myiterator.next() { ... }`
+- can think of `while` loop
 
 ```rs
-let result = match IntoIterator::into_iter(numbers) {
+let iter = IntoIterator::into_iter(iterable);
+while let Some(value) = iter.next() { 
+  // ... do something with `value`
+}
+```
+
+- actually becomes `loop` with `break`
+- outer `match` prevents dropping any temporary values before end of loop
+- declares `value` before being assigned because more often correctly infers types
+
+```rs
+let result = match IntoIterator::into_iter(iterable) {
   mut iter => loop {
-    let next;
+    let mut value;
     match iter.next() {
-      Some(val) => next = val,
+      Some(next_value) => value = next_value,
       None => break,
     };
-    // ...
+    {
+      // ... do something with `value`
+    }
   },
 };
 ```
