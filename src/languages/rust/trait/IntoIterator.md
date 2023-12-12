@@ -16,25 +16,27 @@
 - associated type `IntoIter` is wrapper iterator type and `Item` is its item type
 - automatically implemented for `Iterator`, just returns itself
 - can implement for owned type, reference and mutable reference
+- beware: don't implement if doesn't make sense, e.g. mutable reference for `HashSet`
 - usually implements for im/mutable reference that calls `iter()`/`iter_mut()`
-<!-- todo: why not the other way around? uses this implementation and let convenience methods `iter()` and `iter_mut()` return `IntoIterator::into_iter(&mytype)` and `IntoIterator::into_iter(&mut mytype)`? -->
+<!-- todo: why not the other way around? implement as part of trait and let convenience methods `iter()` and `iter_mut()` return `IntoIterator::into_iter(&mytype)` and `IntoIterator::into_iter(&mut mytype)`? -->
 - beware: for owned type consumes it, instead use reference ❗️
 
 
 
 ## `iter()`
 
-- method of type that returns iterator over immutable reference to values
+- convenience method for `(&value).into_iter()`
 - beware: convention, not part of trait ❗️
 
 
 
 ## `iter_mut()`
 
-- method of type that returns iterator over mutable reference to values
+- convenience method for `(&mut value).into_iter()`
 - beware: convention, not part of trait ❗️
-- doesn't implement if mutation doesn't make sense, e.g. `HashSet`
 
 
 
 ## Resources
+
+- [StackOverflow - What is the difference between iter and into_iter?](https://stackoverflow.com/questions/34733811/what-is-the-difference-between-iter-and-into-iter)
