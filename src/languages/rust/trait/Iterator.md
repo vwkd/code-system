@@ -9,40 +9,24 @@
 - abstracts away over concrete implementation of iteration
 - zero-cost abstraction, no runtime overhead
 - lazy evaluation
+- calls type that implements it also "iterator"
 
 
 
 ## Implementation
 
+- associated type `Item` is type that's iterated over
+- beware: for collection is usually element type ❗️
+- method `next()` returns optional next value `Some(Item)` and advances internal iteration state or `None` at end
+- beware: may resume iteration again after end ❗️
+- other methods have default implementation, doesn't need to implement
 - usually implements on wrapper type
 - allows to separate iterator state from value
 - allows contained value to be immutable
-- can make wrapping type transparent by implementing `IntoIterator` for contained type, `into_iter` method returns wrapping type
-- only needs to implement `next` method and associated type
-- other methods have default implementation
-- `Item` associated type is type that's iterated over
-- `next` method returns `Some(Item)`, changes internal state of iteration, if at end returns `None`
-- beware: may resume iteration again after end ❗️
-- note: by default also implements `IntoIterator` that returns itself
+- by convention calls wrapper type `IntoIter` over owned items, `Iter` over reference items, `IterMut` over mutable reference items
+- automatically implements `IntoIterator` that returns itself
 
-
-
-## Usage
-
-- usually type implements `IntoIterator`
-- usually type also implements methods `iter()`/ `iter_mut()`
-- usually type also implements `IntoIterator` for im/mutable reference that calls `iter()`/ `iter_mut()`
-
-### `iter()`
-
-- get iterator over immutable reference to values
-- beware: name convention, only used in for loop ❗️
-
-### `iter_mut()`
-
-- get iterator over mutable reference to values
-- beware: name convention, only used in for loop ❗️
-- doesn't implement if mutation doesn't make sense, e.g. `HashSet`
+???? can make wrapper type transparent by implementing `IntoIterator` for contained type
 
 
 
@@ -51,7 +35,7 @@
 - method that returns another iterator
 - before consumer
 - can chain multiple
-- doesn't evaluate since lazy
+- doesn't evaluate, lazy
 
 ### `map`
 
