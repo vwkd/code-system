@@ -37,6 +37,14 @@
 
 
 
+## other methods
+
+- ad-hoc methods if no single way to get iterator
+- e.g. `keys()` and `values()` for `HashMap`, etc.
+- beware: not part of trait ❗️
+
+
+
 ## Resources
 
 - [StackOverflow - What is the difference between iter and into_iter?](https://stackoverflow.com/questions/34733811/what-is-the-difference-between-iter-and-into-iter)
