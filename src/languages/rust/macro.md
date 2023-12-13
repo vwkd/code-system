@@ -27,7 +27,7 @@
 - using `macro_rules!` macro
 - match arms like `match` statements
 - use block to contain statements
-- has separate scope for identifiers
+- hygienic, has isolated scope
 - doesn't leak identifiers into caller's scope
 - needs to pass identifiers of caller's scope as pattern to access it
 - beware: don't confuse with function call, doesn't pass value but access to identifier ❗️

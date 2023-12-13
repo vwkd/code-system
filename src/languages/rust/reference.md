@@ -12,7 +12,7 @@
 - can declare mutable only if variable is also mutable
 - to use owned value in outer scope needs to return it, can't return reference since would be dangling pointer
 - lifetime is shorter or equal to lifetime of borrowed value
-- also calls shared for immutable, unique for mutable
+- also calls shared for immutable, unique or exclusive for mutable
 
 
 
