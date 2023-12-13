@@ -63,6 +63,18 @@ Variables can be bound within the pattern
 The binding mode (move, copy, or reference) depends on the pattern
 ?? Every binding in each | separated pattern must appear in all of the patterns in the arm. Every binding of the same name must have the same type, and have the same binding mode.
 
+match ergonomics: when a reference is matched with a non-reference pattern, the bindings within that pattern bind by reference rather than by value
+i.e. as if they were prefixed with `ref`
+When a reference value is matched by a non-reference pattern, it will be automatically treated as a `ref` or `ref mut` binding
+```rs
+let x = &Some(0);
+
+match x {
+    Some(y) => { ... }, // `y` is a reference to `0`
+    None => { ... },
+}
+```
+
 
 
 ## Irrefutable
@@ -75,3 +87,7 @@ The binding mode (move, copy, or reference) depends on the pattern
 
 
 
+## Resources
+
+- [RFC 2005 - match ergonomics](https://github.com/rust-lang/rfcs/blob/master/text/2005-match-ergonomics.md)
+- [StackOverflow - Extracting a mutable reference from an Option](https://stackoverflow.com/questions/69615120/extracting-a-mutable-reference-from-an-option/69616386#69616386)
