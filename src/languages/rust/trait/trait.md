@@ -133,10 +133,8 @@ eg Add operator
 
 ## Extension trait
 
-idiomatic way to extend foreign trait
-
-trait with bound ??
-blanket implementation for all types
+- trait with bound of foreign trait
+- can provide blanket implementation for all types with foreign trait
 
 ```rs
 pub trait IteratorExt: Iterator { .. }
