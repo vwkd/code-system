@@ -31,6 +31,7 @@
 - doesn't need static type information
 - performance penalty due to extra lookup during runtime
 - no binary size increase
+<!-- todo: when is the specific implementation for each concrete type generated? if at compile time, why doesn't it similarly increase binary size like static dispatch? -->
 
 
 
