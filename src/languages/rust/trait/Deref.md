@@ -6,6 +6,7 @@
 
 - ability to use deref coercion
 - beware: should only implement for smart pointer ❗️
+- beware: lifetime of reference is bound by lifetime of smart pointer, e.g. can't dereference smart pointer and drop it but continue to use reference ❗️
 
 
 

@@ -6,7 +6,7 @@
 
 - smart pointer
 - counts references
-- allows shared ownership of value
+- allows shared ownership
 - beware: multiple owners is misleading, itself is single owner, others only have references ❗️
 - increments reference count for each new reference
 - cleans up when reference count reaches zero
@@ -15,12 +15,11 @@
 - strong count is number of references that have ownership of value
 - weak count is number of references that don't have ownership of value
 ? beware: can still have non-zero weak count after value is dropped
-- stores value on heap
-- not `Send` and `Sync`
-- only for single-threaded, not thread-safe
-- for multi-threaded see `Arc`
+- stores value on heap, since not clear whose stack exists the longest
 - only immutable borrows, mutable would violate borrowing rules
-- for shared mutability wrap value in `RefCell`
+- for shared mutable ownership wrap value in `RefCell`
+- only for single-threaded, not thread-safe, not `Send` and `Sync`
+- for multi-threaded see `Arc`
 
 
 

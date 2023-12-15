@@ -6,10 +6,12 @@
 
 - smart pointer
 - allows interior mutability
-- like `RefCell`, but works for multiple threads
-- can get immutable reference using `read()` method
-- can get mutable reference using `write()` method
 - allows multiple readers or single writer
-- blocks until can aquire lock
+- like `RefCell`, but
+- for multi-threaded, thread-safe, `Send` and `Sync`
+- uses atomic counters
+- can get immutable reference using `read` method
+- can get mutable reference using `write` method
+- blocks until can aquire lock instead of panicking,
+synchronized
 - beware: potential for deadlocks ❗️
-
