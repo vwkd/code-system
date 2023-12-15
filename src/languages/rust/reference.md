@@ -80,6 +80,7 @@ strong pointer??: owns value
 - allows to use reference to any wrapper type like reference of contained type
 - best practice to accept reference of contained type to be most general
 - e.g. `&String` for `&str`
+- dot operator automatically dereferences, calls method on contained type
 - beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
 - at compile time
 - no performance penalty
@@ -230,7 +231,7 @@ beware: `*` isn't dereference operator
 ## Smart pointer
 
 - owns value, dropped automatically when itself is dropped
-- beware: only thinks of it when shared ownership ❗️
+- beware: mostly used for shared ownership or shared mutability which borrowing doesn't support ❗️
 - statically sized
 - reference is pointer to pointer
 - best practice to use coercion target, avoids extra layer of indirection
@@ -243,6 +244,7 @@ beware: `*` isn't dereference operator
 ## Interior Mutability
 
 - mutatability through immutable reference
+- beware: doesn't need if can get mutable reference ❗️
 - uses wrapping smart pointer that offers methods to read and mutate underlying value
 - allows shared mutability
 - beware: prefer inherited mutability through direct references, use only if necessary ❗️
@@ -255,3 +257,4 @@ can think of mutable memory location behind immutable pointer
 - [Jon Gjengset - Crust of Rust: Lifetime Annotations](https://youtube.com/watch?v=rAl-9HwD858)
 - [Ricardo Martins - Interior mutability in Rust: what, why, how?](https://ricardomartins.cc/2016/06/08/interior-mutability)
 - [Code to the Moon - Rust Interior Mutability - Sneaking By The Borrow Checker](https://youtube.com/watch?v=HwupNf9iCJk)
+- [Jon Gjengset - Crust of Rust: Smart Pointers and Interior Mutability](https://youtube.com/watch?v=8O0Nt9qY_vo)
