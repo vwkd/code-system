@@ -4,17 +4,12 @@
 
 ## Introduction
 
-???
-
- allows to conditionally either borrow data or own it
- that dynamism takes place at runtime
-  essentially an enum of `Vec` and `&[T]` (in this case). 
-  has a borrow type inside it
-  it comes with the source code overhead of needing lifetime parameters everywhere
-  doesn't allow to make shallow-but-owned copies like Arc does
-  
-  can eliminate unnecessary deep clones
-  but not a drop-in replacement for Vec, unlike Arc<[T]> can be
+- smart pointer
+- allows clone-on-write, dynamically allocate only on modification
+- contains reference to value
+- implements `Deref` to get reference
+- method `to_mut` clones value and stores owned value instead, gives mutable reference
+- beware: doesn't implement `DerefMut` to make allocation explicit ❗️
 
 
 
