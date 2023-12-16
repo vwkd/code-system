@@ -14,6 +14,7 @@ can write async code that looks like sync code
 
 async keyword is syntax sugar for returning impl Future ???with associated type Output
 
+used when is I/O bound, not when is CPU bound
 
 
 
@@ -65,3 +66,5 @@ send and sync traits??
 
 
 ## Resources
+
+- [Jon Gjengset - Crust of Rust: Channels](https://youtube.com/watch?v=b4mS5UPHh20)
