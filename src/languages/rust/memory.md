@@ -65,6 +65,8 @@ implicit during binding
 
 implementing Copy trait does not invalidate the prior owner,
 
+beware: doesn't move a type itself only the value of a type, can access types from different threads, e.g. match on `Message` enum in multiple threads
+
 
 
 ## Dropping
