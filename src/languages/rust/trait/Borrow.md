@@ -13,8 +13,6 @@
 - trivial blanket implementations for `T`, `&T` and `&mut T`
 - allows to use type independently of ownership form, can use reference or owned value, abstracts over ownership form of type
 
-<!-- todo: ?? complemented with ToOwned and Cow -->
-
 
 
 ## BorrowMut
