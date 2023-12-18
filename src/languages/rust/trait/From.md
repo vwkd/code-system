@@ -8,7 +8,6 @@
 - consumes owned value
 - must not fail, for failure see `TryFrom`
 - not necessarily cheap
-- automatically implements opposite `Into`
 
 
 
