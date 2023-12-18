@@ -28,8 +28,7 @@
 
 - for Result unwraps Ok or returns Error
 - for Option unwraps Some or returns None
-
-?? automatically converts into target if implements `From` trait
+- automatically converts error type into target error type if implements `From` trait
 
 
 
