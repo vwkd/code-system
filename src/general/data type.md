@@ -12,38 +12,40 @@
 - can be zero sized
 - can be algebraic
 - can be generic, associated
+- beware: name is also used for a value ❗️
 
 
 
 ## Primitive
 
 - built-in
+- defined by language
 
 
 
 ## Non-primitive
 
 - not built-in
+- defined by user
 
 
 
 ## Scalar
 
-- not made up of other types
-- atomic
+- value is atomic
 
 
 
 ## Composite
 
-- made up of other types
+- value consists of other values
 - also called compound
 
 
 
 ## Non-collection
 
-- stores single value
+- value consists of single value
 - usually scalar
 - single value in memory
 ?? no proper term
@@ -52,7 +54,7 @@
 
 ## Collection
 
-- stores multiple values
+- value consists of multiple values
 - usually composite
 - beware: not necessarily contiguous sequence of values in memory ❗️
 
