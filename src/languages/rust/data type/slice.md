@@ -20,6 +20,8 @@
 
 - contiguous sequence of values in memory
 
+- beware: can only change values, not add or remove values, e.g. for string slice can ASCII lowercase but not Unicode lowercase since might change number of characters ❗️
+
 
 
 ## Reference
