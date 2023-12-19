@@ -12,6 +12,7 @@
 - can be zero sized
 - can be algebraic
 - can be generic, associated
+- can be sub or super
 - beware: name is also used for a value ❗️
 
 
@@ -129,6 +130,20 @@
 - type alias associated with another type
 - represents single concrete type
 - can think of placeholder
+
+
+
+## Sub
+
+- subset of other type
+- writes `T <: S` for other type `S`
+
+
+
+## Super
+
+- superset of other type
+- writes `T :> S` for other type `S`
 
 
 
