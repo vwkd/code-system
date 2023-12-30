@@ -41,6 +41,7 @@
 
 - value consists of other values
 - also called compound
+- writes `F<T>` for a component type `T`
 
 
 
@@ -137,6 +138,7 @@
 
 - subset of other type
 - writes `T <: S` for other type `S`
+- can use in place of supertype
 
 
 
@@ -144,6 +146,44 @@
 
 - superset of other type
 - writes `T :> S` for other type `S`
+- can use subtype in place of itself
+
+
+
+## Variance
+
+- relationship of composite subtyping to component subtyping
+- beware: not necessarily same for multiple components of composite type ❗️
+- beware: can quickly get confusing for nested composite types `G<..<F<T>>..>` ❗️
+
+### Covariant
+
+- preserved
+subtype ordering
+- varies in same direction
+- if `T <: S` then `F<T> <: F<S>`
+- e.g. list in element type, function in return type
+
+### Contravariant
+
+- reversed
+subtype ordering
+- varies in opposite direction
+- if `T <: S` then `F<S> <: F<T>`
+- e.g. function in argument type
+
+### Bivariant
+
+- both covariant and contravariant
+- if `T <: S` then `F<S> = F<T>`
+
+### Invariant
+
+- ignored
+subtype ordering
+- doesn't vary
+- no subtyping relationship exists
+- also called not variant
 
 
 

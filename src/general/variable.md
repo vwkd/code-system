@@ -50,6 +50,12 @@
 - time during which is valid
 - also called extend
 - beware: also often means part of scope where is actually valid ❗️
+- can think of as implicit component type of composite type
+- longer is subtype of shorter
+- type is covariant in lifetime
+- beware: always for every type ❗️
+- can think of as shortening the longer lifetime
+- beware: don't confuse with composite type's variance in explicit components ❗️
 
 ### Lexical
 
