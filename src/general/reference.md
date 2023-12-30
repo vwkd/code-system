@@ -21,6 +21,9 @@
 - can think of visiting someone else's house
 - with their permission, you can visit, you can even change stuff, but you need to leave again
 
+- immutable is covariant
+- mutable is invariant
+
 
 
 ## Dereferencing

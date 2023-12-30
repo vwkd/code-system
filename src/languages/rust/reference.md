@@ -188,6 +188,8 @@ ability to interface with other languages￼
 ability to build safe abstractions that the borrow checker doesn't understand ￼
 to interface with hardware
 
+same variance as reference
+
 ### immutable
 
 can't be assigned after dereferenced
@@ -250,6 +252,7 @@ beware: `*` isn't dereference operator
 - allows shared mutability
 - beware: prefer inherited mutability through direct references, use only if necessary ❗️
 can think of mutable memory location behind immutable pointer
+- invariant, like mutable reference
 
 
 
