@@ -96,6 +96,10 @@
 - used to model complex data types
 - can think of custom data type
 - beware: in programming often called just "type" ❗️
+- if generic over `T` inherits variance from constituent types using `T`
+  - covariant in `T` if all constituent types using `T` are covariant
+  - contravariant in `T` if all constituent types using `T` are contravariant
+  - otherwise invariant in `T`
 
 ### Sum
 
@@ -155,13 +159,14 @@
 - relationship of composite subtyping to component subtyping
 - beware: not necessarily same for multiple components of composite type ❗️
 - beware: can quickly get confusing for nested composite types `G<..<F<T>>..>` ❗️
+- assuming `T <: S`, then
 
 ### Covariant
 
 - preserved
 subtype ordering
 - varies in same direction
-- if `T <: S` then `F<T> <: F<S>`
+- `F<T> <: F<S>`
 - e.g. list in element type, function in return type
 
 ### Contravariant
@@ -169,20 +174,20 @@ subtype ordering
 - reversed
 subtype ordering
 - varies in opposite direction
-- if `T <: S` then `F<S> <: F<T>`
+- `F<S> <: F<T>`
 - e.g. function in argument type
 
 ### Bivariant
 
 - both covariant and contravariant
-- if `T <: S` then `F<S> = F<T>`
+- `F<S> = F<T>`
 
 ### Invariant
 
 - ignored
 subtype ordering
 - doesn't vary
-- no subtyping relationship exists
+- no subtyping relationship between `F<T>` and `F<S>`
 - also called not variant
 
 
