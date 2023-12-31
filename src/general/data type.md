@@ -156,23 +156,22 @@
 
 ## Variance
 
-- relationship of composite subtyping to component subtyping
+- relationship of component subtyping to composite subtyping
+- how subtyping of component type affects subtyping of composite type
 - beware: not necessarily same for multiple components of composite type ❗️
 - beware: can quickly get confusing for nested composite types `G<..<F<T>>..>` ❗️
 - assuming `T <: S`, then
 
 ### Covariant
 
-- preserved
-subtype ordering
+- preserved subtype ordering, same subtyping
 - varies in same direction
 - `F<T> <: F<S>`
 - e.g. list in element type, function in return type
 
 ### Contravariant
 
-- reversed
-subtype ordering
+- reversed subtype ordering, opposite subtyping 
 - varies in opposite direction
 - `F<S> <: F<T>`
 - e.g. function in argument type
@@ -184,8 +183,7 @@ subtype ordering
 
 ### Invariant
 
-- ignored
-subtype ordering
+- no subtype ordering
 - doesn't vary
 - no subtyping relationship between `F<T>` and `F<S>`
 - also called not variant
