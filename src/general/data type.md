@@ -42,6 +42,7 @@
 - value consists of other values
 - also called compound
 - writes `F<T>` for a component type `T`
+- beware: component doesn't need to be explicit generic, can be implicit ❗️
 
 
 
@@ -127,6 +128,7 @@
 - represents multiple concrete data types
 - enables polymorphism
 - also called type parameter
+- beware: sometimes also calls composite type itself ❗️
 
 
 
