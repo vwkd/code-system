@@ -67,7 +67,7 @@
 
 - size known at compile time
 - also called sized
-- beware: don't confuse with fixed or dynamic size, if can grow or shrink ❗️
+- beware: don't confuse with fixed or dynamic size of collection, if can grow or shrink ❗️
 
 
 
@@ -76,9 +76,13 @@
 - size only known at runtime
 - also called unsized, not sized
 - must use behind some sort of reference
+to make statically sized
 ?? has extra bit of metadata that stores size of data
+--> not necessarily, e.g. trait object
+stores pointer to type and also stores pointer to vtable for the trait
+--> not necessarily, e.g. slice
 - e.g. recursive type
-- beware: don't confuse with fixed or dynamic size, if can grow or shrink ❗️
+- beware: don't confuse with fixed or dynamic size of collection, if can grow or shrink ❗️
 
 
 
@@ -124,8 +128,8 @@
 
 ## Generic
 
-- abstract data type
-- represents multiple concrete data types
+- abstract supertype
+- represents multiple concrete subtypes
 - enables polymorphism
 - also called type parameter
 - beware: sometimes also calls composite type itself ❗️
