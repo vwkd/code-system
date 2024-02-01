@@ -4,6 +4,6 @@
 
 ## Introduction
 
-- ability of identifier to represent only one concrete data type
+- ability of type to only be concrete subtype
 - is called specialized
 - opposite of polymorphism

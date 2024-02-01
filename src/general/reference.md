@@ -50,7 +50,8 @@ Though also doubles as construct to create the owned value
 
 - reference
 - holds additional metadata for completeness
-- double the size of simple reference
+- e.g. double the size of simple reference
+- also called wide pointer
 
 
 

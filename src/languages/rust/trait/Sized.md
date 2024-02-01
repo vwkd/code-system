@@ -5,7 +5,8 @@
 ## Introduction
 
 - type is statically sized
-- automatically implemented, can't manually implement
+- automatically implemented if possible
+- beware: can't manually implement ❗️
 - automatically imported because included in prelude
 
 

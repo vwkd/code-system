@@ -11,13 +11,12 @@ index: 11
 - beware: no struct fields ❗️
 - can instead move shared fields out into shared struct and use that in single field
 - allows shared behavior
-- enables polymorphism
+- enables supertype
 - replaces interfaces and inheritance in other languages
 - convention is to name after capitalized verb, e.g. `Clone`, `Copy`
 - can think of as adjective, e.g. copyable, clonable, etc.
 - called marker if empty, used only as label
 
-it's also a type
 dynamically sized
 
 Self
@@ -141,6 +140,21 @@ pub trait IteratorExt: Iterator { .. }
 
 impl<T: Iterator> IteratorExt for T { .. }
 ```
+
+
+
+## Object-safe
+
+- only methods, no associated functions
+??since not associated with concrete type
+- only methods without generic
+??since doesn't know which concrete type is passed in
+?? compile can't figure out concrete type
+- methods can't return `Self`
+e.g. `Clone`
+because `Self` is now unsized trait object but function return value must be sized
+- methods can't take `self` by value, only by reference
+because `Self` is now unsized trait object but function parameter must be sized
 
 
 

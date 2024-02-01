@@ -13,6 +13,7 @@
 - to use owned value in outer scope needs to return it, can't return reference since would be dangling pointer
 - lifetime is shorter or equal to lifetime of borrowed value
 - also calls shared for immutable, unique or exclusive for mutable
+- sized, can use to make sized type from unsized type
 
 
 
@@ -67,12 +68,11 @@ strong pointer??: owns value
 
 ### Coercion
 
-- automatic dereferencing on arguments to functions and methods
+- automatic dereferencing on assignment and function argument and instantiations, field access and method call, array index, ...
 - can think of inserting dereference operator
 - beware: implicit, automagical ❗️
 - for type that implements `Deref` traits
 - beware: all references since `Deref` has blanket implementation for `&T` and `&mut T` for any `T` ❗️
-- beware: also in dot operator ❗️
 - beware: ambiguity between methods on wrapper type and contained type, by convention use associated functions on wrapper type ❗️
 - allows to use type transparently like reference of contained type
 - as many times as necessary, multiple
