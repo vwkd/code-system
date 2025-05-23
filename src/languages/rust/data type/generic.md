@@ -5,7 +5,7 @@
 ## Introduction
 
 - specifies any traits that subtype implements
-- trait must be object-safe
+- trait must be dyn-compatible
 
 
 
@@ -45,7 +45,7 @@
 - beware: often uses "trait object" as synonym for "reference / smart pointer to trait object" ⚠️
 
 - uses in library to avoid users having to specify generic
-- uses in method instead of generic to make trait object-safe
+- uses in method instead of generic to make trait dyn-compatible
 
 - can only specify auto traits as additional traits
 e.g. `Send`, `Sync`, etc.

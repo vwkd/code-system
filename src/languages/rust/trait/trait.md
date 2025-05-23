@@ -143,7 +143,7 @@ impl<T: Iterator> IteratorExt for T { .. }
 
 
 
-## Object-safe
+## Dyn-compatibility
 
 - only methods, no associated functions
 ??since not associated with concrete type
@@ -155,6 +155,7 @@ e.g. `Clone`
 because `Self` is now unsized trait object but function return value must be sized
 - methods can't take `self` by value, only by reference
 because `Self` is now unsized trait object but function parameter must be sized
+- previously called object-safety
 
 
 
